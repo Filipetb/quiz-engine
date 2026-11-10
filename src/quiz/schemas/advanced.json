@@ -1,0 +1,274 @@
+{
+  "quiz": {
+    "id": "advanced",
+    "slug": "advanced",
+    "name": "Playground avançado (Etapa 3)",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 47% 11%",
+      "accent": "142 76% 36%",
+      "accentFg": "0 0% 100%",
+      "muted": "210 40% 96%"
+    },
+    "radius": "0.75rem"
+  },
+  "variables": {
+    "age": {
+      "type": "number",
+      "default": 30
+    },
+    "height_cm": {
+      "type": "number",
+      "default": 170
+    },
+    "weight_current": {
+      "type": "number",
+      "default": 80
+    },
+    "weight_target": {
+      "type": "number",
+      "default": 72
+    },
+    "bmi": {
+      "type": "number",
+      "compute": "weight_current / ((height_cm / 100) * (height_cm / 100))"
+    }
+  },
+  "steps": [
+    {
+      "id": "step-age",
+      "order": 0,
+      "analyticsKey": "age",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Quantos anos você tem?",
+          "level": 1
+        },
+        {
+          "type": "age_picker",
+          "variable": "age",
+          "min": 13,
+          "max": 100,
+          "step": 1,
+          "label": "Idade"
+        }
+      ]
+    },
+    {
+      "id": "step-height",
+      "order": 1,
+      "analyticsKey": "height",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é a sua altura?",
+          "level": 1
+        },
+        {
+          "type": "height_picker",
+          "variable": "height_cm",
+          "min": 120,
+          "max": 220,
+          "step": 1,
+          "label": "Altura (cm)"
+        }
+      ]
+    },
+    {
+      "id": "step-weight-current",
+      "order": 2,
+      "analyticsKey": "weight_current",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu peso atual?",
+          "level": 1
+        },
+        {
+          "type": "weight_picker",
+          "variable": "weight_current",
+          "min": 30,
+          "max": 200,
+          "step": 1,
+          "label": "Peso (kg)"
+        }
+      ]
+    },
+    {
+      "id": "step-weight-target",
+      "order": 3,
+      "analyticsKey": "weight_target",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu peso alvo?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Vamos usar esse valor para projetar sua evolução."
+        },
+        {
+          "type": "weight_picker",
+          "variable": "weight_target",
+          "min": 30,
+          "max": 200,
+          "step": 1,
+          "label": "Peso alvo (kg)",
+          "continueLabel": "Calcular meu plano"
+        }
+      ]
+    },
+    {
+      "id": "step-loading",
+      "order": 4,
+      "analyticsKey": "loading",
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Analisando suas respostas…",
+          "subtext": "Calculando IMC, projeção e melhor cardápio de partida.",
+          "durationMs": 2800
+        }
+      ]
+    },
+    {
+      "id": "step-result",
+      "order": 5,
+      "analyticsKey": "result",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Seu diagnóstico",
+          "level": 1
+        },
+        {
+          "type": "bmi_gauge",
+          "variable": "bmi",
+          "caption": "Classificação baseada nas faixas da OMS."
+        },
+        {
+          "type": "progress_chart",
+          "weightVariable": "weight_current",
+          "targetVariable": "weight_target",
+          "weeks": 12,
+          "title": "Projeção de 12 semanas"
+        },
+        {
+          "type": "image_carousel",
+          "aspectRatio": "16 / 9",
+          "autoPlay": true,
+          "intervalMs": 3500,
+          "images": [
+            {
+              "src": "https://picsum.photos/seed/pq-slide-1/640/360",
+              "alt": "Depoimento 1",
+              "caption": "“Perdi 8kg em 3 meses” — Ana, 34"
+            },
+            {
+              "src": "https://picsum.photos/seed/pq-slide-2/640/360",
+              "alt": "Depoimento 2",
+              "caption": "“Nunca mais desisti” — Carlos, 41"
+            },
+            {
+              "src": "https://picsum.photos/seed/pq-slide-3/640/360",
+              "alt": "Depoimento 3",
+              "caption": "“Rotina que cabe no meu dia” — Marina, 28"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "Ver vídeo explicativo",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "step-video-demo",
+      "order": 6,
+      "analyticsKey": "video_demo",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como funciona",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Demo do mecanismo de injeção: avance e volte — o timestamp muda, provando que o slot remonta limpo."
+        },
+        {
+          "type": "video_script",
+          "containerId": "pq-video-demo",
+          "aspectRatio": "16 / 9",
+          "inlineScript": "(function(){var el=document.getElementById('pq-video-demo');if(!el)return;el.innerHTML='<div style=\"color:white;font-family:sans-serif;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;\">[DEMO PLAYER]<br>montado em '+new Date().toLocaleTimeString()+'</div>';})();"
+        },
+        {
+          "type": "button",
+          "label": "Próximo",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "step-video-vturb",
+      "order": 7,
+      "analyticsKey": "video_vturb",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Players reais (VTurb)",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Dois VTurb reais lado a lado — um com A/B test, outro sem. Ao voltar/avançar, o custom element é recriado no slot e o player.js do head é reaproveitado (dedup por URL)."
+        },
+        {
+          "type": "video_script",
+          "playerTag": "vturb-smartplayer",
+          "playerAttributes": {
+            "id": "ab-YOUR_PLAYER_ID",
+            "style": "display: block; margin: 0 auto; width: 100%;"
+          },
+          "scriptSrc": "https://scripts.converteai.net/YOUR_ACCOUNT_ID/ab-test/YOUR_PLAYER_ID/player.js",
+          "pitchSync": {
+            "delaySeconds": 1367,
+            "variants": [
+              {
+                "videoId": "ab-id-variante-a",
+                "delaySeconds": 1367
+              },
+              {
+                "videoId": "ab-id-variante-b",
+                "delaySeconds": 1450
+              }
+            ]
+          }
+        },
+        {
+          "type": "video_script",
+          "playerTag": "vturb-smartplayer",
+          "playerAttributes": {
+            "id": "vid-YOUR_PLAYER_ID",
+            "style": "display: block; margin: 0 auto; width: 100%; max-width: 400px;"
+          },
+          "scriptSrc": "https://scripts.converteai.net/YOUR_ACCOUNT_ID/players/YOUR_PLAYER_ID/v4/player.js"
+        },
+        {
+          "type": "button",
+          "label": "Finalizar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    }
+  ]
+}

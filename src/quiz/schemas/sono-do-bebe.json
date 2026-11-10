@@ -1,0 +1,796 @@
+{
+  "quiz": {
+    "id": "sono-do-bebe",
+    "slug": "sono-do-bebe",
+    "name": "Sono do Bebê sem Mamada",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 47% 11%",
+      "accent": "349 100% 72%",
+      "accentFg": "0 0% 100%",
+      "muted": "210 40% 96%"
+    },
+    "radius": "1rem",
+    "fonts": {
+      "sans": "Nunito, system-ui, sans-serif"
+    }
+  },
+  "variables": {
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "sleep_today": {
+      "type": "string",
+      "default": null
+    },
+    "night_wakings": {
+      "type": "string",
+      "default": null
+    },
+    "duration": {
+      "type": "string",
+      "default": null
+    },
+    "baby_age": {
+      "type": "string",
+      "default": null
+    },
+    "emotional_impact": {
+      "type": "string[]",
+      "default": []
+    },
+    "sleep_routine": {
+      "type": "string",
+      "default": null
+    },
+    "previous_attempts": {
+      "type": "string[]",
+      "default": []
+    },
+    "commitment": {
+      "type": "string",
+      "default": null
+    }
+  },
+  "steps": [
+    {
+      "id": "welcome",
+      "order": 0,
+      "analyticsKey": "welcome",
+      "progress": 0,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Descubra em 3 minutos como ensinar seu bebê a **Dormir Sem Mamar**",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "De forma gentil com a Técnica da Vaca"
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Leva só 3 minutos · Seus dados estão seguros",
+          "body": "Mais de **25.000 mães** já fizeram este teste.",
+          "alignment": "center"
+        },
+        {
+          "type": "button",
+          "label": "🎁 COMEÇAR TESTE GRÁTIS",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "sleep_today",
+      "order": 1,
+      "analyticsKey": "sleep_today",
+      "progress": 0.05,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como seu bebê dorme HOJE?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Seja 100% honesta, ninguém está te julgando ❤️"
+        },
+        {
+          "type": "single_choice",
+          "variable": "sleep_today",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "only_nursing_multiple_wakings",
+              "label": "😫 Só dorme mamando e acorda várias vezes"
+            },
+            {
+              "value": "only_bottle_wakings",
+              "label": "🍼 Só dorme com mamadeira, acorda à noite"
+            },
+            {
+              "value": "only_in_arms_hours",
+              "label": "☹️ Só dorme no colo/ninar, leva horas"
+            },
+            {
+              "value": "ok_but_want_improve",
+              "label": "😥 Dorme razoável mas quero melhorar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night_wakings",
+      "order": 2,
+      "analyticsKey": "night_wakings",
+      "progress": 0.1,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Quantas vezes seu bebê acorda À NOITE buscando seio/mamadeira?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Pense na noite de ontem..."
+        },
+        {
+          "type": "single_choice",
+          "variable": "night_wakings",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "5_plus",
+              "label": "😵 5+ vezes (a cada 1-2 horas)"
+            },
+            {
+              "value": "3_to_4",
+              "label": "😟 3-4 vezes"
+            },
+            {
+              "value": "1_to_2",
+              "label": "😔 1-2 vezes"
+            },
+            {
+              "value": "rarely",
+              "label": "😊 Não acorda (ou muito raramente)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duration",
+      "order": 3,
+      "analyticsKey": "duration",
+      "progress": 0.15,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Há quanto tempo você está lidando com isso?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Não é culpa sua. Mas agir mais cedo significa alívio mais rápido."
+        },
+        {
+          "type": "single_choice",
+          "variable": "duration",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "over_6_months",
+              "label": "😰 Mais de 6 meses (estou no limite!)"
+            },
+            {
+              "value": "3_to_6_months",
+              "label": "😥 Entre 3-6 meses"
+            },
+            {
+              "value": "1_to_3_months",
+              "label": "😕 Entre 1-3 meses"
+            },
+            {
+              "value": "under_1_month",
+              "label": "🆕 Menos de 1 mês"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baby_age",
+      "order": 4,
+      "analyticsKey": "baby_age",
+      "progress": 0.2,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é a idade do seu bebê?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Isso nos ajuda a personalizar as técnicas para a fase dele."
+        },
+        {
+          "type": "single_choice",
+          "variable": "baby_age",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "0_to_6m",
+              "label": "👶 0 a 6 meses"
+            },
+            {
+              "value": "7_to_12m",
+              "label": "🍼 7 a 12 meses"
+            },
+            {
+              "value": "13_to_24m",
+              "label": "🧸 13 a 24 meses (1-2 anos)"
+            },
+            {
+              "value": "over_2y",
+              "label": "🎈 Mais de 2 anos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name_capture",
+      "order": 5,
+      "analyticsKey": "name_capture",
+      "progress": 0.25,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu nome?",
+          "level": 1
+        },
+        {
+          "type": "text_input",
+          "variable": "name",
+          "placeholder": "Digite seu nome aqui",
+          "required": true,
+          "continueLabel": "CONTINUAR"
+        }
+      ]
+    },
+    {
+      "id": "emotional_impact",
+      "order": 6,
+      "analyticsKey": "emotional_impact",
+      "progress": 0.3,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Olá, {name}! 👋 Como a privação de sono está te afetando?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Marque tudo que se aplica:"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "emotional_impact",
+          "minSelected": 1,
+          "continueLabel": "Continuar",
+          "options": [
+            {
+              "value": "exhausted_irritated",
+              "label": "😏 Estou exausta e irritada o tempo todo"
+            },
+            {
+              "value": "no_energy_anything",
+              "label": "😩 Sem tempo/energia pra nada (nem pra se arrumar)"
+            },
+            {
+              "value": "relationship_affected",
+              "label": "💔 Meu relacionamento está sendo afetado"
+            },
+            {
+              "value": "guilty_failure",
+              "label": "😔 Me sinto culpada, como se tivesse falhado"
+            },
+            {
+              "value": "anxious_bedtime",
+              "label": "😰 Fico ansiosa com a hora de dormir"
+            },
+            {
+              "value": "lost_identity",
+              "label": "🪞 Sinto que perdi minha identidade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep_routine",
+      "order": 7,
+      "analyticsKey": "sleep_routine",
+      "progress": 0.35,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como seu bebê NORMALMENTE adormece?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Pense na rotina NOTURNA:"
+        },
+        {
+          "type": "single_choice",
+          "variable": "sleep_routine",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "nursing_breast",
+              "label": "👩‍👦 Mamando no seio (sempre)"
+            },
+            {
+              "value": "bottle",
+              "label": "🍼 Mamando mamadeira"
+            },
+            {
+              "value": "car_moving",
+              "label": "🚗 No carro/movimento"
+            },
+            {
+              "value": "arms_rocking",
+              "label": "👐 No colo, ninado"
+            },
+            {
+              "value": "crib_rarely",
+              "label": "🛏️ No berço/cama (raramente)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education_why",
+      "order": 8,
+      "analyticsKey": "education_why",
+      "progress": 0.4,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Veja por que isso está acontecendo...",
+          "level": 2
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Entenda a causa raiz",
+          "body": "❌ Não significa fome · ❌ Não significa que você falhou · ✅ Significa que é a única forma que ele conhece de dormir",
+          "alignment": "center"
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "A boa notícia: você pode mudar isso em 3 dias ou menos!",
+          "body": "Com a Técnica da Vaca, mães gentis como você estão conseguindo **resultados reais**.",
+          "alignment": "center"
+        },
+        {
+          "type": "button",
+          "label": "Entendi, continuar...",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "previous_attempts",
+      "order": 9,
+      "analyticsKey": "previous_attempts",
+      "progress": 0.45,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Você já tentou resolver isso antes?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Marque tudo que você já tentou:"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "previous_attempts",
+          "minSelected": 1,
+          "continueLabel": "Continuar",
+          "options": [
+            {
+              "value": "reduce_feedings_gradually",
+              "label": "😏 Reduzir mamadas gradualmente"
+            },
+            {
+              "value": "put_drowsy_crib",
+              "label": "🤔 Colocar sonolento no berço (não funcionou)"
+            },
+            {
+              "value": "other_person_bedtime",
+              "label": "👨 Deixar o pai/outra pessoa fazer a hora de dormir"
+            },
+            {
+              "value": "sleep_ritual",
+              "label": "🛁 Ritual de sono (banho, música, etc.)"
+            },
+            {
+              "value": "consulted_pediatrician",
+              "label": "👩‍⚕️ Consultei pediatra (não ajudou)"
+            },
+            {
+              "value": "nothing_worked",
+              "label": "❌ Nada disso funcionou!"
+            },
+            {
+              "value": "not_tried_anything",
+              "label": "🆕 Não, não tentei nada ainda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education_not_failed",
+      "order": 10,
+      "analyticsKey": "education_not_failed",
+      "progress": 0.5,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Você NÃO falhou. ❤️",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "A maioria dos métodos online tem 3 problemas:"
+        },
+        {
+          "type": "callout",
+          "variant": "danger",
+          "title": "❌ PROBLEMA 1: GENÉRICO",
+          "body": "Ignoram a idade do bebê e as associações específicas dele.",
+          "alignment": "left"
+        },
+        {
+          "type": "callout",
+          "variant": "danger",
+          "title": "❌ PROBLEMA 2: DEIXAR CHORANDO",
+          "body": "Causam trauma e angústia — nem para o bebê nem para a mãe.",
+          "alignment": "left"
+        },
+        {
+          "type": "callout",
+          "variant": "danger",
+          "title": "❌ PROBLEMA 3: COMPLICADO",
+          "body": "Múltiplos passos, sem um caminho claro a seguir.",
+          "alignment": "left"
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "✅ A Técnica da Vaca é diferente",
+          "body": "Gentil · Personalizada pela idade · Simples em vídeo passo a passo · **Resultados em 3 dias**",
+          "alignment": "center"
+        },
+        {
+          "type": "button",
+          "label": "QUERO SABER MAIS!",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "loading_social_proof",
+      "order": 11,
+      "analyticsKey": "loading_social_proof",
+      "progress": 0.6,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Estamos analisando suas respostas...",
+          "subtext": "💬 Enquanto aguarda, veja o que outras mães estão dizendo:",
+          "durationMs": 8000,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "order": 12,
+      "analyticsKey": "testimonials",
+      "progress": 0.65,
+      "components": [
+        {
+          "type": "heading",
+          "text": "💬 Veja o que acontece em apenas 3 dias:",
+          "level": 2
+        },
+        {
+          "type": "testimonial_carousel",
+          "autoPlay": true,
+          "intervalMs": 5000,
+          "items": [
+            {
+              "rating": 5,
+              "headline": "Bebê dormindo **sozinho na 3ª noite**",
+              "handle": "@anapaula_mae",
+              "body": "Não acreditava que seria possível sem deixar chorando. Na terceira noite meu filho dormiu sem mamar uma vez sequer!"
+            },
+            {
+              "rating": 5,
+              "headline": "**6 horas seguidas** depois de 14 meses",
+              "handle": "@juliana.maternidade",
+              "body": "14 meses acordando de 2 em 2 horas. Depois da Técnica da Vaca, em 3 dias minha bebê dormiu 6 horas seguidas."
+            },
+            {
+              "rating": 5,
+              "headline": "Meu relacionamento foi **salvo**",
+              "handle": "@camilaemfe",
+              "body": "Além do bebê dormir, recuperei minha energia e meu casamento melhorou muito. Obrigada!"
+            },
+            {
+              "rating": 5,
+              "headline": "Funcionou em **2 noites** para mim",
+              "handle": "@marisol.bebe",
+              "body": "Achei que seria difícil, mas foi surpreendentemente tranquilo. Meu bebê não chorou muito e dormiu na segunda noite."
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "commitment",
+      "order": 13,
+      "analyticsKey": "commitment",
+      "progress": 0.8,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Você consegue dedicar 20 MINUTOS POR DIA por 3 dias?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Este é o tempo necessário para aplicar o método:"
+        },
+        {
+          "type": "single_choice",
+          "variable": "commitment",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "yes_anything",
+              "label": "✅ Sim! Farei o que for preciso para resolver isso"
+            },
+            {
+              "value": "yes_organize_time",
+              "label": "✅ Sim, consigo organizar meu tempo"
+            },
+            {
+              "value": "maybe",
+              "label": "🤔 Talvez... depende do dia"
+            },
+            {
+              "value": "no_time",
+              "label": "❌ Não tenho tempo para isso"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loading_analysis",
+      "order": 14,
+      "analyticsKey": "loading_analysis",
+      "progress": 0.9,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Preparando sua análise personalizada...",
+          "subtext": "✓ Analisando a idade do bebê... ✓ Identificando padrão de sono... ✓ Calculando a técnica ideal...",
+          "durationMs": 8000,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "reveal_result",
+      "order": 15,
+      "analyticsKey": "reveal_result",
+      "progress": 0.95,
+      "components": [
+        {
+          "type": "heading",
+          "text": "{name}, o perfil de sono do seu bebê está pronto!",
+          "level": 1
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "🎯 DIAGNÓSTICO:",
+          "body": "Seu bebê criou uma ASSOCIAÇÃO DE SONO com o seio/mamadeira. Ele não sabe dormir de outra forma — ainda.",
+          "alignment": "center"
+        },
+        {
+          "type": "stat_bars",
+          "barHeight": "10rem",
+          "items": [
+            {
+              "badge": "Hoje",
+              "badgeVariant": "muted",
+              "percent": 15,
+              "color": "accent",
+              "caption": "Qualidade atual do sono"
+            },
+            {
+              "badge": "Em 3 dias",
+              "badgeVariant": "accent",
+              "percent": 85,
+              "color": "success",
+              "caption": "Com a **Técnica da Vaca**"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Cada noite que passa...",
+          "body": "...o padrão se consolida mais. A boa notícia é que você pode mudar isso em **3 dias ou menos**.",
+          "alignment": "center"
+        },
+        {
+          "type": "button",
+          "label": "🎬 VER MEU DESAFIO PRÁTICO",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "pitch_vsl",
+      "order": 16,
+      "analyticsKey": "pitch_vsl",
+      "components": [
+        {
+          "type": "heading",
+          "text": "APERTE O PLAY E VEJA O RESULTADO EM VÍDEO ABAIXO ▼",
+          "level": 2
+        },
+        {
+          "type": "video_script",
+          "scriptSrc": "SUBSTITUIR_COM_URL_DO_SCRIPT_PANDAVIDEO",
+          "playerTag": "pandavideo-player",
+          "playerAttributes": {
+            "style": "width:100%;"
+          },
+          "aspectRatio": "9 / 16",
+          "pitchSync": {
+            "delaySeconds": 80
+          }
+        },
+        {
+          "type": "callout",
+          "hiddenUntilPitch": true,
+          "variant": "success",
+          "title": "ÓTIMA NOTÍCIA! Você está exatamente onde estão outras mães...",
+          "body": "...que conseguiram fazer o bebê dormir em **3 dias** com a Técnica da Vaca.",
+          "alignment": "center"
+        },
+        {
+          "type": "stat_bars",
+          "hiddenUntilPitch": true,
+          "barHeight": "8rem",
+          "items": [
+            {
+              "badge": "HOJE",
+              "badgeVariant": "muted",
+              "percent": 10,
+              "color": "accent",
+              "caption": "😢 Bebê só dorme mamando"
+            },
+            {
+              "badge": "DIA 1",
+              "badgeVariant": "muted",
+              "percent": 35,
+              "color": "accent",
+              "caption": "🧐 Aprender a Técnica"
+            },
+            {
+              "badge": "DIA 2",
+              "badgeVariant": "muted",
+              "percent": 65,
+              "color": "accent",
+              "caption": "😍 Primeiros resultados"
+            },
+            {
+              "badge": "DIA 3",
+              "badgeVariant": "accent",
+              "percent": 95,
+              "color": "success",
+              "caption": "😴 **Bebê dorme sozinho**"
+            }
+          ]
+        },
+        {
+          "type": "pricing_card",
+          "hiddenUntilPitch": true,
+          "badge": "DESAFIO PRÁTICO 3 DIAS",
+          "badgeColor": "#ff6e88",
+          "planName": "Técnica da Vaca — Acesso Completo",
+          "originalPrice": "R$ 97",
+          "price": "9x de R$ 8,80",
+          "dailyLabel": "TRIAL",
+          "dailyPrice": "7 dias",
+          "dailySuffix": "sem risco"
+        },
+        {
+          "type": "callout",
+          "hiddenUntilPitch": true,
+          "variant": "success",
+          "title": "Garantia: Bebê dormindo sem mamar OU seu dinheiro de volta!",
+          "body": "Se em 7 dias você não ver resultado, devolvemos 100% sem perguntas.",
+          "alignment": "center"
+        },
+        {
+          "type": "button",
+          "hiddenUntilPitch": true,
+          "label": "🎁 QUERO ACESSO AO DESAFIO AGORA",
+          "href": "https://example.com/checkout",
+          "target": "_blank",
+          "variant": "hero",
+          "color": "#ff6e88"
+        },
+        {
+          "type": "faq",
+          "hiddenUntilPitch": true,
+          "items": [
+            {
+              "icon": "🔒",
+              "question": "O pagamento é seguro?",
+              "answer": "Sim. Processado por uma plataforma de pagamentos segura."
+            },
+            {
+              "icon": "⏱",
+              "question": "Quando recebo o acesso?",
+              "answer": "Imediatamente após o pagamento, diretamente no seu email."
+            },
+            {
+              "icon": "↩",
+              "question": "E se não funcionar?",
+              "answer": "Você tem 7 dias de garantia total. Pediu, devolvemos 100% sem burocracia."
+            },
+            {
+              "icon": "📱",
+              "question": "Funciona para qualquer idade?",
+              "answer": "Sim! O método é adaptado para bebês de 0 a 2+ anos."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

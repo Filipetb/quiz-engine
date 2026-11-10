@@ -1,0 +1,1575 @@
+{
+  "quiz": {
+    "id": "treino-em-casa-es",
+    "slug": "treino-em-casa-es",
+    "name": "Treino em Casa — Calistenia (ES)",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 25% 12%",
+      "accent": "330 81% 60%",
+      "accentFg": "0 0% 100%",
+      "muted": "330 40% 96%"
+    },
+    "radius": "0.75rem",
+    "fonts": {
+      "sans": "Nunito, system-ui, sans-serif"
+    }
+  },
+  "variables": {
+    "goal": {
+      "type": "string"
+    },
+    "body_type": {
+      "type": "string"
+    },
+    "age_range": {
+      "type": "string"
+    },
+    "tried_calisthenics": {
+      "type": "string"
+    },
+    "body_experience": {
+      "type": "string"
+    },
+    "last_satisfied": {
+      "type": "string"
+    },
+    "focus_areas": {
+      "type": "string[]",
+      "default": []
+    },
+    "dream_body": {
+      "type": "string"
+    },
+    "issues": {
+      "type": "string[]",
+      "default": []
+    },
+    "exercise_frequency": {
+      "type": "string"
+    },
+    "water_intake": {
+      "type": "string"
+    },
+    "stairs_breath": {
+      "type": "string"
+    },
+    "walk_frequency": {
+      "type": "string"
+    },
+    "energy_level": {
+      "type": "string"
+    },
+    "sleep_hours": {
+      "type": "string"
+    },
+    "bad_habits": {
+      "type": "string[]",
+      "default": []
+    },
+    "life_events": {
+      "type": "string[]",
+      "default": []
+    },
+    "fitness_reason": {
+      "type": "string[]",
+      "default": []
+    },
+    "height_cm": {
+      "type": "number"
+    },
+    "weight_current": {
+      "type": "number",
+      "default": 70
+    },
+    "weight_target": {
+      "type": "number",
+      "default": 65
+    },
+    "age": {
+      "type": "number"
+    },
+    "upcoming_event": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "bmi": {
+      "type": "number",
+      "compute": "weight_current / ((height_cm / 100) * (height_cm / 100)) + 1"
+    }
+  },
+  "steps": [
+    {
+      "id": "welcome",
+      "order": 0,
+      "analyticsKey": "welcome",
+      "components": [
+        {
+          "type": "image",
+          "src": "/images/md-welcome-proof.webp",
+          "alt": "Antes y después"
+        },
+        {
+          "type": "image",
+          "src": "/images/examples/before-after-welcome.webp",
+          "alt": "Antes y después"
+        },
+        {
+          "type": "button",
+          "label": "INICIAR PRUEBA",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "goal",
+      "order": 1,
+      "analyticsKey": "goal",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu principal objetivo con la **calistenia?**",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "goal",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "lose_weight",
+              "label": "🔥  Perder peso"
+            },
+            {
+              "value": "tone",
+              "label": "💪  Ganar más fuerza muscular y tonificar el cuerpo"
+            },
+            {
+              "value": "flexibility",
+              "label": "🧘  Ganar más flexibilidad"
+            },
+            {
+              "value": "reduce_stress",
+              "label": "🧘‍♀️  Eliminar tensiones y preocupaciones"
+            },
+            {
+              "value": "control_sugar",
+              "label": "🌸  Controlar el azúcar en la sangre para mejorar mi salud y prevenir o tratar la diabetes tipo 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-proof-1",
+      "order": 2,
+      "analyticsKey": "social_proof_1",
+      "components": [
+        {
+          "type": "heading",
+          "text": "**65.328 mujeres transformaron sus cuerpos** con el Desafío de Calistenia.",
+          "className": "text-center"
+        },
+        {
+          "type": "image",
+          "src": "/images/md-zvkCa-captura-de-tela-2025-11-07-160356.webp",
+          "alt": "Antes y después"
+        },
+        {
+          "type": "text",
+          "text": "¿Cuándo estarás?",
+          "className": "text-center text-base"
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "body-type",
+      "order": 3,
+      "analyticsKey": "body_type",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál de estas opciones describe **mejor tu cuerpo?**",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "body_type",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "slim",
+              "label": "Delgada",
+              "imageSrc": "/images/examples/body-type-slim.webp"
+            },
+            {
+              "value": "medium",
+              "label": "Media",
+              "imageSrc": "/images/examples/body-type-medium.webp"
+            },
+            {
+              "value": "large",
+              "label": "Grande",
+              "imageSrc": "/images/examples/body-type-large.webp"
+            },
+            {
+              "value": "overweight",
+              "label": "Con sobrepeso",
+              "imageSrc": "/images/examples/body-type-overweight.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-proof-2",
+      "order": 4,
+      "analyticsKey": "social_proof_2",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Sabías que el **71.4%** de las alumnas del Desafío de Calistenia en Casa comenzaron por **recomendación** de **profesionales de la salud?**",
+          "className": "text-center"
+        },
+        {
+          "type": "stat_bars",
+          "items": [
+            {
+              "badge": "71%",
+              "badgeVariant": "muted",
+              "percent": 71,
+              "color": "success",
+              "caption": "**71.4% de las alumnas** comienzan por recomendación de **médicos** y otros profesionales de la salud"
+            },
+            {
+              "badge": "29%",
+              "badgeVariant": "muted",
+              "percent": 29,
+              "color": "accent",
+              "caption": "**28.6% de las alumnas** conocieron el desafío de calistenia en casa a través de anuncios y contenidos en internet"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "PRÓXIMO PASO",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "age-range",
+      "order": 5,
+      "analyticsKey": "age_range",
+      "components": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "**PLAN DE CALISTENIA PERSONALIZADO**",
+          "className": "text-center text-sm tracking-[0.2em]"
+        },
+        {
+          "type": "text",
+          "text": "BASADO EN TUS NECESIDADES · PRUEBA DE 2 MINUTOS",
+          "className": "text-center text-[10px] tracking-[0.2em] uppercase text-quiz-fg/65"
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu edad?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "age_range",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "18-29",
+              "label": "18 – 29 años"
+            },
+            {
+              "value": "30-39",
+              "label": "30 – 39 años"
+            },
+            {
+              "value": "40-49",
+              "label": "40 – 49 años"
+            },
+            {
+              "value": "50-59",
+              "label": "50 – 59 años"
+            },
+            {
+              "value": "60+",
+              "label": "60+ años"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tried-calisthenics",
+      "order": 6,
+      "analyticsKey": "tried_calisthenics",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Has probado **Calistenia** antes?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "tried_calisthenics",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "yes",
+              "label": "Sí, lo he hecho algunas veces"
+            },
+            {
+              "value": "no",
+              "label": "No, nunca lo he intentado"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/images/md-6Bm9N-a-fitness-photography-shot-of-a-woman-pe-do-lewn4q6qxty-ua1i-ng-dxcmhyfqrigg5knl4u0yug.webp",
+          "alt": "Calistenia en casa"
+        }
+      ]
+    },
+    {
+      "id": "motivation-1",
+      "order": 7,
+      "analyticsKey": "motivation_1",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¡Vas a arrasar! 💪",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Nuestro programa de Calistenia es una opción de ejercicio fácil y efectiva para todos los niveles.",
+          "className": "text-center text-base"
+        },
+        {
+          "type": "text",
+          "text": "¡Te ayudamos a ponerte en forma sin ningún equipo en casa!",
+          "className": "text-center text-base font-semibold text-quiz-accent"
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "body-experience",
+      "order": 8,
+      "analyticsKey": "body_experience",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu experiencia con tu cuerpo?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "body_experience",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "hard_to_gain",
+              "label": "🙄  Me cuesta ganar peso o músculo"
+            },
+            {
+              "value": "easy_swing",
+              "label": "💪  Gano y pierdo peso con facilidad"
+            },
+            {
+              "value": "fast_slow",
+              "label": "👎  Gano peso rápido, pero lo pierdo lentamente"
+            },
+            {
+              "value": "none",
+              "label": "❌  Ninguna de estas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "last-satisfied",
+      "order": 9,
+      "analyticsKey": "last_satisfied",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuándo fue la última vez que te sentiste satisfecha con tu cuerpo?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "last_satisfied",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "<1y",
+              "label": "😪  Hace menos de 1 año"
+            },
+            {
+              "value": "1-2y",
+              "label": "🙁  Entre 1 y 2 años"
+            },
+            {
+              "value": ">3y",
+              "label": "😢  Hace más de 3 años"
+            },
+            {
+              "value": "never",
+              "label": "👎  Nunca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "focus-areas",
+      "order": 10,
+      "analyticsKey": "focus_areas",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Elige las principales áreas que deseas trabajar",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "¡Vamos a crear un protocolo de Calistenia específico para tus metas!",
+          "className": "text-center text-quiz-accent"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "focus_areas",
+          "minSelected": 1,
+          "continueLabel": "Próximo paso",
+          "imageLayout": "prepend",
+          "options": [
+            {
+              "value": "belly",
+              "label": "Vientre",
+              "imageSrc": "/images/examples/focus-belly.png"
+            },
+            {
+              "value": "glutes",
+              "label": "Glúteos",
+              "imageSrc": "/images/examples/focus-glutes.png"
+            },
+            {
+              "value": "legs",
+              "label": "Piernas",
+              "imageSrc": "/images/examples/focus-legs.png"
+            },
+            {
+              "value": "chest",
+              "label": "Pecho",
+              "imageSrc": "https://picsum.photos/seed/focus-chest/300/300"
+            },
+            {
+              "value": "all",
+              "label": "Todo",
+              "imageSrc": "https://picsum.photos/seed/focus-all/300/300"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream-body",
+      "order": 11,
+      "analyticsKey": "dream_body",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Elige el tipo de cuerpo que quieres alcanzar",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Visualizar este objetivo te ayudará a mantener tu mayor motivación.",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "dream_body",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "slim",
+              "label": "Delgada",
+              "imageSrc": "/images/md-g5GkF-captura-de-tela-2025-11-07-165829.webp"
+            },
+            {
+              "value": "toned",
+              "label": "Tonificada",
+              "imageSrc": "/images/md-Yp2m1-captura-de-tela-2025-11-07-165857.webp"
+            },
+            {
+              "value": "curvy",
+              "label": "Con curvas",
+              "imageSrc": "/images/md-VapSL-captura-de-tela-2025-11-07-165925.webp"
+            },
+            {
+              "value": "average",
+              "label": "Promedio",
+              "imageSrc": "/images/md-o0VU2-captura-de-tela-2025-11-07-165952.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "issues",
+      "order": 12,
+      "analyticsKey": "issues",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Tienes problemas con alguno de los siguientes?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Elige todas las que apliquen.",
+          "className": "text-center"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "issues",
+          "minSelected": 1,
+          "continueLabel": "Próximo paso",
+          "imageLayout": "prepend",
+          "options": [
+            {
+              "value": "back",
+              "label": "Espalda sensible",
+              "imageSrc": "/images/examples/issue-back.png"
+            },
+            {
+              "value": "knees",
+              "label": "Rodillas sensibles",
+              "imageSrc": "/images/examples/issue-knees.png"
+            },
+            {
+              "value": "none",
+              "label": "Ninguna de las anteriores",
+              "imageSrc": "/images/examples/issue-none.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exercise-frequency",
+      "order": 13,
+      "analyticsKey": "exercise_frequency",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Con qué **frecuencia** haces ejercicio?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "exercise_frequency",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "almost_daily",
+              "label": "Casi todos los días"
+            },
+            {
+              "value": "several_week",
+              "label": "Varias veces a la semana"
+            },
+            {
+              "value": "some_month",
+              "label": "Algunas veces al mes"
+            },
+            {
+              "value": "never",
+              "label": "Nunca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "water-intake",
+      "order": 14,
+      "analyticsKey": "water_intake",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuánta **agua** bebes diariamente?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "water_intake",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "only_coffee",
+              "label": "Solo tomo café o té"
+            },
+            {
+              "value": "2",
+              "label": "Dos vasos"
+            },
+            {
+              "value": "2-6",
+              "label": "De dos a seis vasos"
+            },
+            {
+              "value": "6+",
+              "label": "Más de seis vasos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "order": 15,
+      "analyticsKey": "testimonials",
+      "components": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Tus respuestas fueron parecidas a las de ellas",
+          "className": "text-center"
+        },
+        {
+          "type": "image_carousel",
+          "aspectRatio": "4 / 4",
+          "autoPlay": true,
+          "intervalMs": 3000,
+          "images": [
+            {
+              "src": "/images/md-C0ko8-captura-de-tela-2025-11-07-171212.webp",
+              "alt": "Paola, 31 años - Argentina",
+              "caption": "Paola, 31 años · Argentina"
+            },
+            {
+              "src": "/images/examples/before-after-03.png",
+              "alt": "María, 39 años",
+              "caption": "María, 39 años · México"
+            },
+            {
+              "src": "/images/examples/before-after-01.png",
+              "alt": "Laura, 37 años",
+              "caption": "Laura, 37 años · Colombia"
+            },
+            {
+              "src": "/images/examples/before-after-02.png",
+              "alt": "Carmen, 55 años",
+              "caption": "Carmen, 55 años · México"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "stairs-breath",
+      "order": 16,
+      "analyticsKey": "stairs_breath",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Te falta el aire al subir escaleras?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "stairs_breath",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "no_breath",
+              "label": "Me quedo sin aliento que no puedo soportar"
+            },
+            {
+              "value": "after_flight",
+              "label": "Me quedo sin aliento después de un tramo de escaleras"
+            },
+            {
+              "value": "fine_flight",
+              "label": "Estoy bien después de un tramo de escaleras"
+            },
+            {
+              "value": "several_flights",
+              "label": "Puedo manejar unos cuantos tramos de escaleras"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "walk-frequency",
+      "order": 17,
+      "analyticsKey": "walk_frequency",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Con qué frecuencia sales a caminar?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "walk_frequency",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "almost_daily",
+              "label": "Casi todos los días"
+            },
+            {
+              "value": "several_week",
+              "label": "Varias veces a la semana"
+            },
+            {
+              "value": "some_month",
+              "label": "Algunas veces al mes"
+            },
+            {
+              "value": "never",
+              "label": "Nunca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy-level",
+      "order": 18,
+      "analyticsKey": "energy_level",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cómo están tus niveles de energía durante el día?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "energy_level",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "low",
+              "label": "😔  Bajos, me siento cansada durante todo el día"
+            },
+            {
+              "value": "post_lunch",
+              "label": "😕  Siento una caída de energía después del almuerzo"
+            },
+            {
+              "value": "between_meals",
+              "label": "😐  Me arrastro entre las comidas"
+            },
+            {
+              "value": "high",
+              "label": "🚀  Altos y estables"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-2",
+      "order": 19,
+      "analyticsKey": "motivation_2",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "La Calistenia es una excelente manera de **aumentar tu energía**",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Estos ejercicios mejoran la movilidad del cuerpo, el bienestar y fortalecen tu cuerpo.",
+          "className": "text-center text-base"
+        },
+        {
+          "type": "text",
+          "text": "¡Queremos que tengas la energía para vivir tu vida al máximo!",
+          "className": "text-center text-base font-semibold"
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sleep-hours",
+      "order": 20,
+      "analyticsKey": "sleep_hours",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuánto duermes generalmente?",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "sleep_hours",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "<5",
+              "label": "Menos de 5 horas"
+            },
+            {
+              "value": "5-6",
+              "label": "5 – 6 horas"
+            },
+            {
+              "value": "7-8",
+              "label": "7 – 8 horas"
+            },
+            {
+              "value": "8+",
+              "label": "Más de 8 horas"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/images/md-jfZDm-a-bright-well-lit-photo-of-a-young-woman-of792phfq4w5bm6zdmcu0g-vkdrqloys5utquozxmjvaq.webp",
+          "alt": "Cuánto duermes generalmente"
+        }
+      ]
+    },
+    {
+      "id": "bad-habits",
+      "order": 21,
+      "analyticsKey": "bad_habits",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Tienes alguno de los siguientes malos hábitos?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Elige todas las que apliquen.",
+          "className": "text-center text-quiz-accent"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "bad_habits",
+          "minSelected": 1,
+          "continueLabel": "Próximo paso",
+          "options": [
+            {
+              "value": "emotional",
+              "label": "💤  Comer por emoción o aburrimiento"
+            },
+            {
+              "value": "overeat",
+              "label": "🍫  Comer en exceso"
+            },
+            {
+              "value": "late_snacks",
+              "label": "🍟  Comer bocadillos tarde en la noche"
+            },
+            {
+              "value": "skip_meals",
+              "label": "🧂  Saltar comidas con demasiada frecuencia"
+            },
+            {
+              "value": "none",
+              "label": "❌  Ninguna de las opciones anteriores"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life-events",
+      "order": 22,
+      "analyticsKey": "life_events",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Alguno de los siguientes eventos de la vida ha llevado al aumento de peso en los últimos años?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Elige todas las que apliquen.",
+          "className": "text-center"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "life_events",
+          "minSelected": 0,
+          "continueLabel": "Próximo paso",
+          "options": [
+            {
+              "value": "work_pressure",
+              "label": "💼 Presión laboral"
+            },
+            {
+              "value": "busy_family",
+              "label": "👶 Cambios por embarazo o posparto"
+            },
+            {
+              "value": "divorce",
+              "label": "💍 Divorcio o ruptura"
+            },
+            {
+              "value": "slow_metabolism",
+              "label": "👎 Metabolismo más lento asociado a la edad"
+            },
+            {
+              "value": "emotional_changes",
+              "label": "😔 Cambios emocionales o estrés"
+            },
+            {
+              "value": "financial",
+              "label": "💰 Cuestiones financieras"
+            },
+            {
+              "value": "covid",
+              "label": "🏥 Pandemia de Covid-19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fitness-reason",
+      "order": 23,
+      "analyticsKey": "fitness_reason",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu principal razón para ponerte en forma?",
+          "className": "text-center"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "fitness_reason",
+          "minSelected": 1,
+          "continueLabel": "Próximo paso",
+          "options": [
+            {
+              "value": "confidence",
+              "label": "Sentirme más confiada en mi cuerpo"
+            },
+            {
+              "value": "health",
+              "label": "Sentirme más saludable y con más energía"
+            },
+            {
+              "value": "clothes",
+              "label": "Que me queden mejor mis prendas"
+            },
+            {
+              "value": "postpartum",
+              "label": "Recuperar mi forma después de dar a luz"
+            },
+            {
+              "value": "other",
+              "label": "Otra"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "height",
+      "order": 24,
+      "analyticsKey": "height",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu altura?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Por favor, ingresa un número en centímetros.",
+          "className": "text-center"
+        },
+        {
+          "type": "number_input",
+          "variable": "height_cm",
+          "placeholder": "Ejemplo: 165",
+          "min": 120,
+          "max": 220,
+          "required": true,
+          "continueLabel": "Próximo paso"
+        },
+        {
+          "type": "text",
+          "text": "☝️  Calculando tu índice de masa corporal. El IMC se utiliza ampliamente como un factor de riesgo para el desarrollo o prevalencia de diversos problemas de salud.",
+          "className": "rounded-[var(--radius)] bg-blue-50 p-4 text-center text-blue-900"
+        }
+      ]
+    },
+    {
+      "id": "weight-current",
+      "order": 25,
+      "analyticsKey": "weight_current",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu peso actual?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Por favor, ingresa un número en kg.",
+          "className": "text-center"
+        },
+        {
+          "type": "weight_picker",
+          "variable": "weight_current",
+          "min": 40,
+          "max": 200,
+          "step": 1,
+          "default": 70,
+          "unit": "kg",
+          "continueLabel": "Próximo paso"
+        }
+      ]
+    },
+    {
+      "id": "weight-target",
+      "order": 26,
+      "analyticsKey": "weight_target",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¡Entendido! ¿Y cuál es tu peso objetivo?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Por favor, ingresa un número en kg.",
+          "className": "text-center"
+        },
+        {
+          "type": "weight_picker",
+          "variable": "weight_target",
+          "min": 40,
+          "max": 200,
+          "step": 1,
+          "default": 65,
+          "unit": "kg",
+          "continueLabel": "Próximo paso"
+        }
+      ]
+    },
+    {
+      "id": "age",
+      "order": 27,
+      "analyticsKey": "age",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu edad?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Preguntamos tu edad para personalizar tu plan.",
+          "className": "text-center text-quiz-accent font-bold"
+        },
+        {
+          "type": "text",
+          "text": "Se ha encontrado que las personas mayores tienen un porcentaje de grasa corporal más alto que las personas más jóvenes con el mismo IMC.",
+          "className": "rounded-[var(--radius)] bg-blue-50 p-4 text-center text-blue-900"
+        },
+        {
+          "type": "number_input",
+          "variable": "age",
+          "placeholder": "Ejemplo: 39",
+          "min": 13,
+          "max": 99,
+          "required": true,
+          "continueLabel": "Próximo paso"
+        }
+      ]
+    },
+    {
+      "id": "bmi-result",
+      "order": 28,
+      "analyticsKey": "bmi_result",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Aquí está el análisis de tu perfil",
+          "className": "text-center"
+        },
+        {
+          "type": "bmi_gauge",
+          "variable": "bmi",
+          "caption": "Tu Índice de Masa Corporal (IMC) calculado a partir de tu peso y altura."
+        },
+        {
+          "type": "text",
+          "text": "⚠️  Riesgos de un IMC poco saludable:",
+          "className": "text-center text-rose-900 font-semibold"
+        },
+        {
+          "type": "text",
+          "text": "Hipertensión, ACV (accidente cerebrovascular), diabetes tipo 2, dolor crónico de espalda, entre otros.",
+          "className": "rounded-[var(--radius)] bg-rose-50 p-4 text-rose-900"
+        },
+        {
+          "type": "text",
+          "text": "Según sus respuestas y los resultados de alumnas con un perfil similar al suyo, su probabilidad de éxito en el reto de 28 días es de:",
+          "className": "text-center text-sm"
+        },
+        {
+          "type": "progress_bar",
+          "percent": 96,
+          "color": "success",
+          "label": "Tasa de éxito"
+        },
+        {
+          "type": "text",
+          "text": "Creamos un programa de seguimiento personalizado para que obtengas resultados increíbles en 28 días",
+          "className": "text-center font-semibold"
+        },
+        {
+          "type": "button",
+          "label": "PRÓXIMO PASO",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "upcoming-event",
+      "order": 29,
+      "analyticsKey": "upcoming_event",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Tienes un evento importante próximamente?",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "Tener algo que esperar puede ser una gran motivación para alcanzar tu objetivo.",
+          "className": "text-center"
+        },
+        {
+          "type": "single_choice",
+          "variable": "upcoming_event",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "vacation",
+              "label": "Vacaciones"
+            },
+            {
+              "value": "wedding",
+              "label": "Boda"
+            },
+            {
+              "value": "reunion",
+              "label": "Reunión"
+            },
+            {
+              "value": "birthday",
+              "label": "Cumpleaños"
+            },
+            {
+              "value": "holiday",
+              "label": "Día festivo"
+            },
+            {
+              "value": "sports",
+              "label": "Evento deportivo"
+            },
+            {
+              "value": "other",
+              "label": "Otro"
+            },
+            {
+              "value": "none",
+              "label": "Ningún evento en el corto plazo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan-teaser",
+      "order": 30,
+      "analyticsKey": "plan_teaser",
+      "components": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "El último plan que necesitarás para ponerte en forma",
+          "className": "text-center"
+        },
+        {
+          "type": "text",
+          "text": "De acuerdo con miles de resultados similares, estás muy cerca de lograr un gran avance hacia tu objetivo:",
+          "className": "text-center text-sm"
+        },
+        {
+          "type": "progress_chart",
+          "weightVariable": "weight_current",
+          "targetVariable": "weight_target",
+          "weeks": 4,
+          "title": "Próximos 28 días"
+        },
+        {
+          "type": "text",
+          "text": "*Basado en los datos de nuestras alumnas en progreso. El rendimiento y el resultado del programa pueden variar.",
+          "className": "text-center text-xs text-quiz-fg/60"
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "alignment": "center",
+          "title": "¡Protocolo personalizado casi listo!",
+          "body": "Según tus respuestas, estás lista para obtener resultados con el desafío…"
+        },
+        {
+          "type": "button",
+          "label": "Continuar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "analyzing",
+      "order": 31,
+      "analyticsKey": "analyzing",
+      "components": [
+        {
+          "type": "loading_screen",
+          "variant": "bar",
+          "text": "Analizando tus datos y finalizando tu plan",
+          "subtext": "Ajustando el protocolo de Calistenia a tu perfil…",
+          "durationMs": 6800
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "En total, durante los últimos 3 meses, nuestras alumnas han **perdido en promedio +16,3 kg** 😍",
+          "className": "text-center"
+        },
+        {
+          "type": "testimonial_carousel",
+          "autoPlay": true,
+          "intervalMs": 2900,
+          "items": [
+            {
+              "rating": 5,
+              "headline": "Perdí **15,5 kg** y fue maravilloso",
+              "handle": "@lara_gonzl",
+              "body": "Me sentía tan mal conmigo misma que usaba ropa holgada para que no se notara mi barriga cuando me vestía. Dejé de salir con mi prometido porque sentía vergüenza; temía que, al estar en la calle, aparecieran otras mujeres más delgadas y él se sintiera atraído. Era horrible, pero después de perder esos 15,5 kg me siento más segura y me di cuenta de que es posible bajar de peso."
+            },
+            {
+              "rating": 5,
+              "headline": "Bajé **4,3 kg** en 7 días",
+              "handle": "@carla.be",
+              "body": "Probé de todo antes de empezar: dietas locas, suplementos, entrenamientos extremos… Nada funcionaba por mucho tiempo. Con el programa aprendí a moverme sin lastimarme y a comer mejor sin pasar hambre. En 7 días bajé 4,3 kg y recuperé mi confianza para volver al gimnasio y salir con mis amigas."
+            },
+            {
+              "rating": 5,
+              "headline": "Mi rutina por fin **cabe en mi día**",
+              "handle": "@diana_rm",
+              "body": "Soy mamá de dos y trabajo de 8 a 18. Pensaba que nunca iba a tener tiempo para entrenar. Los circuitos cortos del programa cambiaron todo — en 15–20 minutos ya siento que hice algo por mí. Perdí 9 kg en 10 semanas y no volví a sentir ese dolor de espalda que me acompañaba hace años."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "order": 32,
+      "analyticsKey": "name",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "¿Cuál es tu nombre?",
+          "className": "text-center"
+        },
+        {
+          "type": "text_input",
+          "variable": "first_name",
+          "placeholder": "Escribe solo tu primer nombre…",
+          "required": true,
+          "continueLabel": "Continuar"
+        }
+      ]
+    },
+    {
+      "id": "plan-ready",
+      "order": 33,
+      "analyticsKey": "plan_ready",
+      "components": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "{{first_name}}, ¡Tu plan de Calistenia está listo!",
+          "className": "text-center"
+        },
+        {
+          "type": "image",
+          "src": "/images/plan-ready-progression.webp",
+          "alt": "Progresión semanal proyectada",
+          "aspectRatio": "5 / 3"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Destaques de tu plan",
+          "className": "text-center"
+        },
+        {
+          "type": "button",
+          "label": "Estoy lista para comenzar",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "video-final",
+      "order": 34,
+      "analyticsKey": "video_final",
+      "components": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "**Mira el video de abajo** para acceder a tu plan de calistenia personalizado 👇",
+          "className": "text-center"
+        },
+        {
+          "type": "video_script",
+          "playerTag": "vturb-smartplayer",
+          "playerAttributes": {
+            "id": "vid-YOUR_PLAYER_ID",
+            "style": "display: block; margin: 0 auto; width: 100%; max-width: 400px;"
+          },
+          "scriptSrc": "https://scripts.converteai.net/YOUR_ACCOUNT_ID/players/YOUR_PLAYER_ID/v4/player.js",
+          "pitchSync": {
+            "delaySeconds": 523
+          }
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Adquiere tu plan ahora",
+          "className": "text-center",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "pricing_card",
+          "badge": "ACCESO PERMANENTE – PAGO ÚNICO",
+          "badgeColor": "#EC4899",
+          "planName": "Plan Vitalicio",
+          "originalPrice": "US$199",
+          "price": "$12.90",
+          "dailyLabel": "Por solo",
+          "dailyPrice": "US$ 0.03",
+          "dailySuffix": "dólares por día",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "button",
+          "label": "¡ACCESO INMEDIATO Y DE POR VIDA!",
+          "href": "https://example.com/checkout",
+          "target": "_self",
+          "variant": "raised",
+          "color": "#16A34A",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "image",
+          "src": "/images/pago-unico.png",
+          "alt": "Pago único - Accesso vitalicio",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "alignment": "left",
+          "title": "Quédate tranquila:",
+          "body": "Al hacer clic en el botón, serás dirigida a una página de pago segura, donde el valor en dólares se convertirá automáticamente a la moneda de tu país. ¡Así que el precio ya aparecerá en la moneda local! ❤️",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Ahora, mira lo que otras mujeres **dicen sobre el desafío**",
+          "className": "text-center mt-8",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "video_script",
+          "containerId": "pq-testimonials-video",
+          "inlineScript": "(function(){var c=document.getElementById('pq-testimonials-video');if(!c)return;c.innerHTML='<div style=\"padding:178.22% 0 0 0;position:relative\"><iframe src=\"https://player.vimeo.com/video/YOUR_VIDEO_ID?badge=0&autopause=0&player_id=0&app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" style=\"position:absolute;top:0;left:0;width:100%;height:100%\" title=\"testimonials\"></iframe></div>';})();",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "button",
+          "label": "¡ACCESO INMEDIATO Y DE POR VIDA!",
+          "href": "https://example.com/checkout",
+          "target": "_self",
+          "variant": "raised",
+          "color": "#16A34A",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "image",
+          "src": "/images/pago-unico.png",
+          "alt": "Pago único - Accesso vitalicio",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "faq",
+          "hiddenUntilPitch": true,
+          "className": "mt-6",
+          "items": [
+            {
+              "icon": "❓",
+              "question": "¿Si no me gusta, puedo recibir mi dinero de vuelta?",
+              "answer": "Sí, tienes una garantía de 30 días, en la que vamos a devolverte inmediatamente tu dinero si haces el desafío y no quedas satisfecha con tus resultados, sin preguntas."
+            },
+            {
+              "icon": "✅",
+              "question": "¿El pago es realmente único o hay tarifas mensuales ocultas?",
+              "answer": "Sí, el pago es único y tendrás acceso de por vida. Acceso libre y vitalicio con un solo pago."
+            },
+            {
+              "icon": "⏰",
+              "question": "¿Por cuánto tiempo tendré acceso?",
+              "answer": "¡Tendrás acceso a nuestro programa de por vida!"
+            },
+            {
+              "icon": "💳",
+              "question": "¿En qué moneda puedo pagar mi inscripción?",
+              "answer": "Al hacer clic en el botón de compra, serás dirigida a una página de pago segura y automáticamente el precio se convertirá a la moneda de tu país."
+            },
+            {
+              "icon": "💪",
+              "question": "¿El método es seguro para quienes nunca han entrenado antes?",
+              "answer": "Sí, los ejercicios son de bajo impacto y se adaptan a todos los niveles."
+            },
+            {
+              "icon": "🔒",
+              "question": "Seguridad de mis datos",
+              "answer": "Tus datos están seguros con la mejor tecnología de seguridad del mundo. La misma que utilizan los bancos internacionales."
+            },
+            {
+              "icon": "📧",
+              "question": "¿Cómo recibiré mi acceso?",
+              "answer": "Recibirás tu acceso por correo electrónico inmediatamente después de completar tu registro."
+            },
+            {
+              "icon": "🤝",
+              "question": "¿Tengo acceso a soporte para resolver dudas?",
+              "answer": "Sí, puedes hacer cualquier consulta a través de WhatsApp o correo electrónico."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Garantía de 30 Días",
+          "className": "text-center text-[#16a34a] mt-8",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "text",
+          "text": "Creemos tanto que nuestro plan funcionará para ti y que obtendrás resultados visibles que estamos dispuestos a devolver tu dinero de inmediato si has seguido el plan y no has visto resultados visibles.",
+          "className": "text-center text-sm text-quiz-fg/60",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "image",
+          "src": "/images/pago-unico.png",
+          "alt": "Pago único - Accesso vitalicio",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "button",
+          "label": "OBTERNER MI PLAN",
+          "href": "https://example.com/checkout",
+          "target": "_self",
+          "variant": "hero",
+          "color": "#16A34A",
+          "hiddenUntilPitch": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "quiz": {
+    "id": "agentsample",
+    "slug": "agentsample",
+    "name": "agentsample — Rich Sample",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 47% 11%",
+      "accent": "330 81% 60%",
+      "accentFg": "0 0% 100%",
+      "muted": "210 40% 96%"
+    },
+    "radius": "0.75rem"
+  },
+  "variables": {
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "goal": {
+      "type": "string",
+      "default": null
+    },
+    "obstacles": {
+      "type": "string[]",
+      "default": []
+    },
+    "height_cm": {
+      "type": "number",
+      "default": 170
+    },
+    "weight_current": {
+      "type": "number",
+      "default": 70
+    },
+    "weight_target": {
+      "type": "number",
+      "default": 62
+    },
+    "age": {
+      "type": "number",
+      "default": 30
+    },
+    "bmi": {
+      "type": "number",
+      "compute": "weight_current / ((height_cm / 100) * (height_cm / 100))"
+    }
+  },
+  "steps": [
+    {
+      "id": "welcome",
+      "order": 0,
+      "analyticsKey": "welcome",
+      "components": [
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/hero/640/320",
+          "alt": "Capa",
+          "aspectRatio": "2 / 1"
+        },
+        {
+          "type": "heading",
+          "text": "Seu plano em **2 minutos**",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Responda 6 perguntas rápidas."
+        },
+        {
+          "type": "button",
+          "label": "Começar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "order": 1,
+      "analyticsKey": "name",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como devemos te chamar?"
+        },
+        {
+          "type": "text_input",
+          "variable": "name",
+          "placeholder": "Seu nome",
+          "required": true,
+          "continueLabel": "Continuar"
+        }
+      ]
+    },
+    {
+      "id": "goal",
+      "order": 2,
+      "analyticsKey": "goal",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual seu objetivo?"
+        },
+        {
+          "type": "single_choice",
+          "variable": "goal",
+          "autoAdvance": true,
+          "imageLayout": "grid",
+          "options": [
+            {
+              "value": "lose",
+              "label": "Emagrecer",
+              "imageSrc": "https://picsum.photos/seed/lose/240/240"
+            },
+            {
+              "value": "gain",
+              "label": "Ganhar massa",
+              "imageSrc": "https://picsum.photos/seed/gain/240/240"
+            },
+            {
+              "value": "maintain",
+              "label": "Manter peso",
+              "imageSrc": "https://picsum.photos/seed/maintain/240/240"
+            },
+            {
+              "value": "tone",
+              "label": "Definir",
+              "imageSrc": "https://picsum.photos/seed/tone/240/240"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obstacles",
+      "order": 3,
+      "analyticsKey": "obstacles",
+      "components": [
+        {
+          "type": "heading",
+          "text": "O que te atrapalha?"
+        },
+        {
+          "type": "multi_choice",
+          "variable": "obstacles",
+          "minSelected": 1,
+          "maxSelected": 3,
+          "options": [
+            {
+              "value": "time",
+              "label": "Falta de tempo"
+            },
+            {
+              "value": "motivation",
+              "label": "Falta de motivação"
+            },
+            {
+              "value": "diet",
+              "label": "Alimentação"
+            },
+            {
+              "value": "routine",
+              "label": "Rotina"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "measures",
+      "order": 4,
+      "analyticsKey": "measures",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Suas medidas"
+        },
+        {
+          "type": "height_picker",
+          "variable": "height_cm",
+          "min": 130,
+          "max": 220,
+          "unit": "cm"
+        },
+        {
+          "type": "weight_picker",
+          "variable": "weight_current",
+          "min": 30,
+          "max": 200,
+          "unit": "kg"
+        },
+        {
+          "type": "age_picker",
+          "variable": "age",
+          "min": 13,
+          "max": 90,
+          "unit": "anos"
+        }
+      ]
+    },
+    {
+      "id": "analyzing",
+      "order": 5,
+      "analyticsKey": "analyzing",
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Calculando seu plano...",
+          "subtext": "Um instante.",
+          "durationMs": 2500,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "reveal",
+      "order": 6,
+      "analyticsKey": "reveal",
+      "components": [
+        {
+          "type": "heading",
+          "text": "{name}, aqui está seu diagnóstico!"
+        },
+        {
+          "type": "bmi_gauge",
+          "variable": "bmi",
+          "caption": "Seu IMC atual"
+        },
+        {
+          "type": "progress_chart",
+          "weightVariable": "weight_current",
+          "targetVariable": "weight_target",
+          "weeks": 12,
+          "title": "Sua projeção"
+        },
+        {
+          "type": "stat_bars",
+          "items": [
+            {
+              "badge": "Hoje",
+              "badgeVariant": "muted",
+              "percent": 40,
+              "color": "accent",
+              "caption": "Energia atual"
+            },
+            {
+              "badge": "12 sem.",
+              "badgeVariant": "accent",
+              "percent": 88,
+              "color": "success",
+              "caption": "Com o **plano**"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Você pode chegar lá",
+          "body": "Resultado em **12 semanas** com 20 min/dia."
+        },
+        {
+          "type": "progress_bar",
+          "percent": 96,
+          "color": "success",
+          "label": "Taxa de sucesso"
+        },
+        {
+          "type": "testimonial_carousel",
+          "autoPlay": true,
+          "intervalMs": 5000,
+          "items": [
+            {
+              "rating": 5,
+              "headline": "Perdi **8 kg** em 2 meses",
+              "handle": "@lara",
+              "body": "Muito prático e sem dietas loucas."
+            },
+            {
+              "rating": 5,
+              "headline": "Recuperei minha **autoestima**",
+              "handle": "@paulo",
+              "body": "Consegui seguir mesmo com rotina corrida."
+            }
+          ]
+        },
+        {
+          "type": "image_carousel",
+          "aspectRatio": "4 / 3",
+          "images": [
+            {
+              "src": "https://picsum.photos/seed/before/480/360",
+              "caption": "Antes"
+            },
+            {
+              "src": "https://picsum.photos/seed/after/480/360",
+              "caption": "12 semanas depois"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "Quero meu plano completo",
+          "action": "next",
+          "variant": "hero"
+        }
+      ]
+    },
+    {
+      "id": "offer",
+      "order": 7,
+      "analyticsKey": "offer",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Oferta especial para você"
+        },
+        {
+          "type": "pricing_card",
+          "badge": "ACESSO VITALÍCIO",
+          "badgeColor": "#10b981",
+          "planName": "Plano Completo",
+          "originalPrice": "R$ 297",
+          "price": "R$ 97",
+          "dailyLabel": "Por dia",
+          "dailyPrice": "R$ 0,27",
+          "dailySuffix": "no 1º ano"
+        },
+        {
+          "type": "button",
+          "label": "Quero agora",
+          "href": "https://checkout.example.com/offer",
+          "target": "_blank",
+          "variant": "hero"
+        },
+        {
+          "type": "faq",
+          "items": [
+            {
+              "icon": "🔒",
+              "question": "É seguro?",
+              "answer": "Pagamento processado com criptografia."
+            },
+            {
+              "icon": "⏱",
+              "question": "Acesso imediato?",
+              "answer": "Sim, enviamos por email em segundos."
+            },
+            {
+              "icon": "↩",
+              "question": "Tem garantia?",
+              "answer": "7 dias, sem perguntas."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

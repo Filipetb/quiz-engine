@@ -1,0 +1,1248 @@
+{
+  "quiz": {
+    "id": "quiz-gluteos-es",
+    "slug": "quiz-gluteos-es",
+    "name": "Quiz Glúteos Sin Sentadillas",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "229 84% 5%",
+      "accent": "262 83% 58%",
+      "accentFg": "0 0% 100%",
+      "muted": "270 100% 98%"
+    },
+    "radius": "1rem",
+    "fonts": {
+      "sans": "Inter, system-ui, sans-serif"
+    }
+  },
+  "variables": {
+    "q1_cual_es_tu_edad": {
+      "type": "string",
+      "default": null
+    },
+    "q2_cual_es_tu_mayor": {
+      "type": "string",
+      "default": null
+    },
+    "q3_cuanto_tiempo_al_dia": {
+      "type": "string",
+      "default": null
+    },
+    "q4_ya_intentaste_entrenar_piernas": {
+      "type": "string",
+      "default": null
+    },
+    "q5_cual_es_tu_mayor": {
+      "type": "string",
+      "default": null
+    },
+    "q6_sientes_algun_tipo_de": {
+      "type": "string",
+      "default": null
+    },
+    "q7_con_que_frecuencia_abandonas": {
+      "type": "string",
+      "default": null
+    },
+    "q8_alguna_vez_pensaste_yo": {
+      "type": "string",
+      "default": null
+    },
+    "q9_cuanto_tiempo_tardas_en": {
+      "type": "string",
+      "default": null
+    },
+    "q10_te_sientes_insegura_al": {
+      "type": "string",
+      "default": null
+    },
+    "q11_ya_invertiste_en_entrenamientos": {
+      "type": "string",
+      "default": null
+    },
+    "q12_evitas_ir_a_la": {
+      "type": "string",
+      "default": null
+    },
+    "q13_si_continuas_como_estas": {
+      "type": "string",
+      "default": null
+    },
+    "q14_cuanto_tiempo_calculas_que": {
+      "type": "string",
+      "default": null
+    },
+    "q15_como_te_sientes_cuando": {
+      "type": "string",
+      "default": null
+    },
+    "q16_alguna_vez_dejaste_de": {
+      "type": "string",
+      "default": null
+    },
+    "q17_cual_es_el_impacto": {
+      "type": "string",
+      "default": null
+    },
+    "q18_estas_de_acuerdo_en": {
+      "type": "string",
+      "default": null
+    },
+    "q19_si_nada_cambia_en": {
+      "type": "string",
+      "default": null
+    },
+    "q20_si_existiera_una_forma": {
+      "type": "string",
+      "default": null
+    },
+    "q21_estarias_dispuesta_a_dedicar": {
+      "type": "string",
+      "default": null
+    },
+    "q22_cual_resultado_seria_mas": {
+      "type": "string",
+      "default": null
+    },
+    "q23_si_te_mostrara_exactamente": {
+      "type": "string",
+      "default": null
+    },
+    "q24_te_comprometes_a_seguir": {
+      "type": "string",
+      "default": null
+    }
+  },
+  "steps": [
+    {
+      "id": "q1_cual_es_tu_edad",
+      "order": 0,
+      "analyticsKey": "q1_cual_es_tu_edad",
+      "progress": 0,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuál es tu edad?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q1_cual_es_tu_edad",
+          "options": [
+            {
+              "value": "a_18_a_24_anos",
+              "label": "1️⃣ 18 a 24 años"
+            },
+            {
+              "value": "b_25_a_34_anos",
+              "label": "2️⃣ 25 a 34 años"
+            },
+            {
+              "value": "c_35_a_44_anos",
+              "label": "3️⃣ 35 a 44 años"
+            },
+            {
+              "value": "d_45_anos_o_mas",
+              "label": "4️⃣ 45 años o más"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q2_cual_es_tu_mayor",
+      "order": 1,
+      "analyticsKey": "q2_cual_es_tu_mayor",
+      "progress": 0.04,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuál es tu MAYOR objetivo con el entrenamiento de piernas y glúteos?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q2_cual_es_tu_mayor",
+          "options": [
+            {
+              "value": "a_tener_gluteos_levantados_y",
+              "label": "🍑 Tener glúteos levantados y piernas torneadas"
+            },
+            {
+              "value": "b_ganar_fuerza_y_definicion",
+              "label": "💪 Ganar fuerza y definición muscular"
+            },
+            {
+              "value": "c_entrar_en_la_ropa",
+              "label": "👗 Entrar en la ropa que amo"
+            },
+            {
+              "value": "d_sentirme_segura_y_sensual",
+              "label": "🔥 Sentirme segura y sensual nuevamente"
+            },
+            {
+              "value": "e_tener_un_cuerpo_del",
+              "label": "✨ Tener un cuerpo del que me sienta orgullosa al mirarme al espejo"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q3_cuanto_tiempo_al_dia",
+      "order": 2,
+      "analyticsKey": "q3_cuanto_tiempo_al_dia",
+      "progress": 0.07,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuánto tiempo al día puedes dedicar al entrenamiento?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q3_cuanto_tiempo_al_dia",
+          "options": [
+            {
+              "value": "a_menos_de_15_minutos",
+              "label": "🕛 Menos de 15 minutos (vida muy agitada)"
+            },
+            {
+              "value": "b_15_a_30_minutos",
+              "label": "🕧 15 a 30 minutos (puedo hacer algo rápido)"
+            },
+            {
+              "value": "c_30_a_45_minutos",
+              "label": "🕢 30 a 45 minutos (tengo un tiempo razonable)"
+            },
+            {
+              "value": "d_mas_de_45_minutos",
+              "label": "🕦 Más de 45 minutos (tengo flexibilidad)"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "loading_after_q3",
+      "order": 3,
+      "analyticsKey": "loading_after_q3",
+      "progress": 0.09000000000000001,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Analizando tu información",
+          "subtext": "✓ Edad y objetivos identificados\n✓ Tiempo disponible calculado\n✓ Historial de entrenamiento registrado",
+          "durationMs": 2500,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "q4_ya_intentaste_entrenar_piernas",
+      "order": 4,
+      "analyticsKey": "q4_ya_intentaste_entrenar_piernas",
+      "progress": 0.11,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Ya intentaste entrenar piernas antes?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q4_ya_intentaste_entrenar_piernas",
+          "options": [
+            {
+              "value": "a_si_pero_lo_deje",
+              "label": "🤷‍♀️ Sí, pero lo dejé porque no veía resultados"
+            },
+            {
+              "value": "b_si_pero_pare_por",
+              "label": "🙅‍♀️ Sí, pero paré por dolor o incomodidad"
+            },
+            {
+              "value": "c_si_pero_no_pude",
+              "label": "🙇‍♀️ Sí, pero no pude mantener la constancia"
+            },
+            {
+              "value": "d_no_nunca_entrene_de",
+              "label": "💆‍♀️ No, nunca entrené de verdad"
+            },
+            {
+              "value": "e_entreno_a_veces_pero",
+              "label": "🏃‍♀️ Entreno a veces, pero sin mucha disciplina"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q5_cual_es_tu_mayor",
+      "order": 5,
+      "analyticsKey": "q5_cual_es_tu_mayor",
+      "progress": 0.15,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuál es tu mayor frustración con el entrenamiento de piernas/glúteos hoy?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q5_cual_es_tu_mayor",
+          "options": [
+            {
+              "value": "a_no_veo_resultados_aunque",
+              "label": "😅 No veo resultados aunque entreno"
+            },
+            {
+              "value": "b_siento_mucho_dolor_en",
+              "label": "😖 Siento mucho dolor en las rodillas al hacer sentadillas"
+            },
+            {
+              "value": "c_no_se_si_estoy",
+              "label": "😔 No sé si estoy haciendo los ejercicios correctamente"
+            },
+            {
+              "value": "d_no_tengo_tiempo_para",
+              "label": "🤷‍♀️ No tengo tiempo para ir al gimnasio"
+            },
+            {
+              "value": "e_ya_lo_intente_todo",
+              "label": "😪 Ya lo intenté todo y nada me funciona"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q6_sientes_algun_tipo_de",
+      "order": 6,
+      "analyticsKey": "q6_sientes_algun_tipo_de",
+      "progress": 0.19,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Sientes algún tipo de dolor o incomodidad al hacer sentadillas?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q6_sientes_algun_tipo_de",
+          "options": [
+            {
+              "value": "a_si_mucho_dolor_no",
+              "label": "😫 Sí, mucho dolor, no puedo hacerlas"
+            },
+            {
+              "value": "b_si_siento_incomodidad_moderada",
+              "label": "😑 Sí, siento incomodidad moderada"
+            },
+            {
+              "value": "c_a_veces_siento_algo",
+              "label": "🤨 A veces siento algo extraño"
+            },
+            {
+              "value": "d_raramente_siento_algo",
+              "label": "😅 Raramente siento algo"
+            },
+            {
+              "value": "e_nunca_hice_sentadillas_para",
+              "label": "🙅‍♀️ Nunca hice sentadillas para saberlo"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q7_con_que_frecuencia_abandonas",
+      "order": 7,
+      "analyticsKey": "q7_con_que_frecuencia_abandonas",
+      "progress": 0.22,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Con qué frecuencia abandonas un entrenamiento por dolor o incomodidad?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q7_con_que_frecuencia_abandonas",
+          "options": [
+            {
+              "value": "a_siempre_por_eso_ya",
+              "label": "1️⃣ Siempre, por eso ya no entreno más"
+            },
+            {
+              "value": "b_frecuentemente_3_veces_por",
+              "label": "2️⃣ Frecuentemente (+3 veces por mes)"
+            },
+            {
+              "value": "c_a_veces_1_o",
+              "label": "3️⃣ A veces (1 o 2 veces por mes)"
+            },
+            {
+              "value": "d_raramente_sucede",
+              "label": "4️⃣ Raramente sucede"
+            },
+            {
+              "value": "e_nunca_abandono_pero_siento",
+              "label": "5️⃣ Nunca abandono, pero siento incomodidad"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q8_alguna_vez_pensaste_yo",
+      "order": 8,
+      "analyticsKey": "q8_alguna_vez_pensaste_yo",
+      "progress": 0.26,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Alguna vez pensaste \"yo no nací para tener glúteos levantados\"?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q8_alguna_vez_pensaste_yo",
+          "options": [
+            {
+              "value": "a_si_lo_pienso_todo",
+              "label": "⏲️ Sí, lo pienso todo el tiempo"
+            },
+            {
+              "value": "b_si_ya_lo_pense",
+              "label": "⏳ Sí, ya lo pensé algunas veces"
+            },
+            {
+              "value": "c_a_veces_me_siento",
+              "label": "💁‍♀️ A veces me siento así"
+            },
+            {
+              "value": "d_no_creo_que_puedo",
+              "label": "💃 No, creo que puedo lograrlo"
+            },
+            {
+              "value": "e_nunca_lo_pense",
+              "label": "💆‍♀️ Nunca lo pensé"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q9_cuanto_tiempo_tardas_en",
+      "order": 9,
+      "analyticsKey": "q9_cuanto_tiempo_tardas_en",
+      "progress": 0.3,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuánto tiempo tardas en ver resultados en los entrenamientos tradicionales?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q9_cuanto_tiempo_tardas_en",
+          "options": [
+            {
+              "value": "a_nunca_vi_resultados_reales",
+              "label": "‼️ Nunca vi resultados reales"
+            },
+            {
+              "value": "b_mas_de_6_meses",
+              "label": "📆 Más de 6 meses (demasiado tiempo)"
+            },
+            {
+              "value": "c_3_a_6_meses",
+              "label": "⌛ 3 a 6 meses (tarda demasiado)"
+            },
+            {
+              "value": "d_1_a_3_meses",
+              "label": "🙌 1 a 3 meses (razonable)"
+            },
+            {
+              "value": "e_no_se_nunca_entrene",
+              "label": "🤷‍♀️ No sé, nunca entrené lo suficiente"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q10_te_sientes_insegura_al",
+      "order": 10,
+      "analyticsKey": "q10_te_sientes_insegura_al",
+      "progress": 0.33,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Te sientes insegura al usar ropa ajustada?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q10_te_sientes_insegura_al",
+          "options": [
+            {
+              "value": "a_si_mucho_evito_esa",
+              "label": "😥 ¡Sí, mucho! Evito esa ropa"
+            },
+            {
+              "value": "b_si_me_siento_bastante",
+              "label": "😓 Sí, me siento bastante insegura"
+            },
+            {
+              "value": "c_a_veces_me_siento",
+              "label": "😬 A veces me siento incómoda"
+            },
+            {
+              "value": "d_un_poco_pero_la",
+              "label": "🙎‍♀️ Un poco, pero la uso igual"
+            },
+            {
+              "value": "e_no_me_siento_segura",
+              "label": "🧘‍♀️ No, me siento segura"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q11_ya_invertiste_en_entrenamientos",
+      "order": 11,
+      "analyticsKey": "q11_ya_invertiste_en_entrenamientos",
+      "progress": 0.37,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Ya invertiste en entrenamientos, programas y gimnasios que no funcionaron?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q11_ya_invertiste_en_entrenamientos",
+          "options": [
+            {
+              "value": "a_si_ya_gaste_mucho",
+              "label": "💸 ¡Sí, ya gasté mucho y no tuve resultados!"
+            },
+            {
+              "value": "b_si_ya_lo_intente",
+              "label": "😫 Sí, ya lo intenté 3 o más veces"
+            },
+            {
+              "value": "c_si_lo_intente_1",
+              "label": "😪 Sí, lo intenté 1 o 2 veces"
+            },
+            {
+              "value": "d_no_pero_tengo_miedo",
+              "label": "🤓 No, pero tengo miedo de gastar en vano"
+            },
+            {
+              "value": "e_nunca_inverti_en_esto",
+              "label": "❌ Nunca invertí en esto antes"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q12_evitas_ir_a_la",
+      "order": 12,
+      "analyticsKey": "q12_evitas_ir_a_la",
+      "progress": 0.41,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Evitas ir a la playa, piscina o usar bikini por vergüenza de tu cuerpo?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q12_evitas_ir_a_la",
+          "options": [
+            {
+              "value": "a_si_lo_evito_completamente",
+              "label": "😭 ¡Sí, lo evito completamente!"
+            },
+            {
+              "value": "b_voy_pero_me_siento",
+              "label": "😔 Voy, pero me siento muy insegura"
+            },
+            {
+              "value": "c_a_veces_me_siento",
+              "label": "😑 A veces me siento incómoda"
+            },
+            {
+              "value": "d_voy_pero_me_gustaria",
+              "label": "😬 Voy, pero me gustaría sentirme mejor"
+            },
+            {
+              "value": "e_ya_me_senti_mejor",
+              "label": "💪 Ya me sentí mejor antes..."
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "loading_after_q12",
+      "order": 13,
+      "analyticsKey": "loading_after_q12",
+      "progress": 0.43,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "🔎 Identificando patrones en tus respuestas",
+          "subtext": "✓ Dolores y frustraciones mapeados\n✓ Bloqueos identificados\n✓ Perfil conductual analizado",
+          "durationMs": 2500,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "q13_si_continuas_como_estas",
+      "order": 14,
+      "analyticsKey": "q13_si_continuas_como_estas",
+      "progress": 0.44,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Si continúas como estás hoy, ¿cómo te ves en 6 meses?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q13_si_continuas_como_estas",
+          "options": [
+            {
+              "value": "a_con_la_misma_frustracion",
+              "label": "😰 Con la misma frustración, sin ningún resultado"
+            },
+            {
+              "value": "b_todavia_intentando_y_fallando",
+              "label": "😤 Todavía intentando y fallando"
+            },
+            {
+              "value": "c_probablemente_ya_habre_desistido",
+              "label": "😨 Probablemente ya habre desistido"
+            },
+            {
+              "value": "d_espero_estar_mejor_pero",
+              "label": "🤪 Espero estar mejor, pero no sé cómo"
+            },
+            {
+              "value": "e_estare_con_el_cuerpo",
+              "label": "🏃‍♀️ ¡Estaré con el cuerpo que quiero!"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q14_cuanto_tiempo_calculas_que",
+      "order": 15,
+      "analyticsKey": "q14_cuanto_tiempo_calculas_que",
+      "progress": 0.48,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuánto tiempo calculas que ya perdiste intentando entrenamientos que no funcionan?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q14_cuanto_tiempo_calculas_que",
+          "options": [
+            {
+              "value": "a_mucho_mas_de_3",
+              "label": "😤 ¡Mucho! Más de 3 años intentando"
+            },
+            {
+              "value": "b_1_a_3_anos",
+              "label": "😪 1 a 3 años en el mismo ciclo"
+            },
+            {
+              "value": "c_6_meses_a_1",
+              "label": "😓 6 meses a 1 año"
+            },
+            {
+              "value": "d_algunos_meses",
+              "label": "🙅‍♀️ Algunos meses"
+            },
+            {
+              "value": "e_estoy_empezando_ahora",
+              "label": "🚶‍♀️ Estoy empezando ahora"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q15_como_te_sientes_cuando",
+      "order": 16,
+      "analyticsKey": "q15_como_te_sientes_cuando",
+      "progress": 0.52,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cómo te sientes cuando ves a otras mujeres con el cuerpo que quieres?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q15_como_te_sientes_cuando",
+          "options": [
+            {
+              "value": "a_frustrada_y_con_envidia",
+              "label": "😰 Frustrada y con envidia"
+            },
+            {
+              "value": "b_triste_porque_creo_que",
+              "label": "😥 Triste porque creo que nunca lo lograré"
+            },
+            {
+              "value": "c_motivada_pero_sin_creer",
+              "label": "😐 Motivada, pero sin creer en mí"
+            },
+            {
+              "value": "d_inspirada_y_esperanzada",
+              "label": "🤗 Inspirada y esperanzada"
+            },
+            {
+              "value": "e_feliz_por_ellas_y",
+              "label": "😉 Feliz por ellas y determinada a lograrlo también"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q16_alguna_vez_dejaste_de",
+      "order": 17,
+      "analyticsKey": "q16_alguna_vez_dejaste_de",
+      "progress": 0.56,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Alguna vez dejaste de hacer algo importante por la inseguridad con tu cuerpo?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q16_alguna_vez_dejaste_de",
+          "options": [
+            {
+              "value": "a_si_muchas_veces_eventos",
+              "label": "👍 Sí, muchas veces (eventos, viajes, citas)"
+            },
+            {
+              "value": "b_si_algunas_veces",
+              "label": "💅 Sí, algunas veces"
+            },
+            {
+              "value": "c_una_o_dos_veces",
+              "label": "✌️ Una o dos veces"
+            },
+            {
+              "value": "d_casi_no_fui_pero",
+              "label": "🤫 Casi no fui, pero igual fui"
+            },
+            {
+              "value": "e_no_nunca_lo_deje",
+              "label": "💃 No, nunca lo dejé"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q17_cual_es_el_impacto",
+      "order": 18,
+      "analyticsKey": "q17_cual_es_el_impacto",
+      "progress": 0.59,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuál es el impacto de esta inseguridad en tu autoestima hoy?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q17_cual_es_el_impacto",
+          "options": [
+            {
+              "value": "a_muy_alto_afecta_todo",
+              "label": "‼️ Muy alto — afecta todo en mi vida"
+            },
+            {
+              "value": "b_alto_lo_pienso_todos",
+              "label": "🤯 Alto — lo pienso todos los días"
+            },
+            {
+              "value": "c_moderado_me_molesta_bastante",
+              "label": "😐 Moderado — me molesta bastante"
+            },
+            {
+              "value": "d_bajo_puedo_manejarlo",
+              "label": "😴 Bajo — puedo manejarlo"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q18_estas_de_acuerdo_en",
+      "order": 19,
+      "analyticsKey": "q18_estas_de_acuerdo_en",
+      "progress": 0.63,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Estás de acuerdo en que ignorar este problema solo va a empeorar todo con el tiempo?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q18_estas_de_acuerdo_en",
+          "options": [
+            {
+              "value": "a_si_totalmente_necesito_cambiar",
+              "label": "¡Sí, totalmente! ¡Necesito cambiar AHORA!"
+            },
+            {
+              "value": "b_si_tiene_sentido",
+              "label": "Sí, tiene sentido."
+            },
+            {
+              "value": "c_quizas_no_habia_pensado",
+              "label": "Quizás, no había pensado en eso"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q19_si_nada_cambia_en",
+      "order": 20,
+      "analyticsKey": "q19_si_nada_cambia_en",
+      "progress": 0.67,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Si nada cambia en los próximos meses, ¿qué es lo que más TEMES que suceda?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q19_si_nada_cambia_en",
+          "options": [
+            {
+              "value": "a_perder_completamente_mi_autoestima",
+              "label": "¡Perder completamente mi autoestima y dejar de cuidarme!"
+            },
+            {
+              "value": "b_continuar_en_este_ciclo",
+              "label": "Continuar en este ciclo de frustración para siempre"
+            },
+            {
+              "value": "c_rendirme_de_una_vez",
+              "label": "Rendirme de una vez y conformarme"
+            },
+            {
+              "value": "d_que_mi_salud_y",
+              "label": "Que mi salud y bienestar empeoren"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "loading_after_q19",
+      "order": 21,
+      "analyticsKey": "loading_after_q19",
+      "progress": 0.6900000000000001,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "🔎 Conectando tus necesidades con la solución ideal",
+          "subtext": "✓ Impacto emocional medido\n✓ Urgencia identificada\n✓ Compromiso en análisis",
+          "durationMs": 2500,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "q20_si_existiera_una_forma",
+      "order": 22,
+      "analyticsKey": "q20_si_existiera_una_forma",
+      "progress": 0.7,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Si existiera una forma COMPROBADA de tener piernas torneadas y glúteos levantados SIN SENTADILLAS, ¿lo probarías?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q20_si_existiera_una_forma",
+          "options": [
+            {
+              "value": "a_si_empezaria_hoy_mismo",
+              "label": "✅ ¡SÍ! ¡Empezaría HOY mismo!"
+            },
+            {
+              "value": "b_si_con_certeza_lo",
+              "label": "👍 Sí, con certeza lo probaría"
+            },
+            {
+              "value": "c_si_pero_con_algo",
+              "label": "☑️ Sí, pero con algo de desconfianza"
+            },
+            {
+              "value": "d_quizas_dependiendo_de_que",
+              "label": "💁‍♀️ Quizás, dependiendo de qué es"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q21_estarias_dispuesta_a_dedicar",
+      "order": 23,
+      "analyticsKey": "q21_estarias_dispuesta_a_dedicar",
+      "progress": 0.74,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Estarías dispuesta a dedicar solo 20 minutos al día durante 4 semanas para obtener el resultado que quieres?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q21_estarias_dispuesta_a_dedicar",
+          "options": [
+            {
+              "value": "a_si_es_poco_puedo",
+              "label": "🤗 ¡SÍ! ¡Es poco, puedo fácil!"
+            },
+            {
+              "value": "b_si_20_minutos_es",
+              "label": "💪 Sí, 20 minutos es perfecto para mí"
+            },
+            {
+              "value": "c_si_voy_a_hacer",
+              "label": "💃 Sí, voy a hacer un esfuerzo para encajarlo"
+            },
+            {
+              "value": "d_quizas_pueda",
+              "label": "😪 Quizás pueda"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q22_cual_resultado_seria_mas",
+      "order": 24,
+      "analyticsKey": "q22_cual_resultado_seria_mas",
+      "progress": 0.78,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Cuál resultado sería MÁS importante para ti en los próximos 30 días?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q22_cual_resultado_seria_mas",
+          "options": [
+            {
+              "value": "a_ver_mis_gluteos_levantandose",
+              "label": "🍑 ¡Ver mis glúteos levantándose visiblemente!"
+            },
+            {
+              "value": "b_sentir_mis_piernas_firmes",
+              "label": "🤸‍♀️ Sentir mis piernas firmes y torneadas"
+            },
+            {
+              "value": "c_poder_usar_esa_ropa",
+              "label": "👯‍♀️ Poder usar esa ropa con confianza"
+            },
+            {
+              "value": "d_recuperar_mi_autoestima_y",
+              "label": "👄 Recuperar mi autoestima y sentirme bien"
+            },
+            {
+              "value": "e_entrenar_sin_dolor_y",
+              "label": "🧘‍♀️ Entrenar sin dolor y con resultados reales"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q23_si_te_mostrara_exactamente",
+      "order": 25,
+      "analyticsKey": "q23_si_te_mostrara_exactamente",
+      "progress": 0.81,
+      "components": [
+        {
+          "type": "heading",
+          "text": "Si te mostrara EXACTAMENTE cómo entrenar sin dolor en las rodillas y tener resultados en 4 semanas, ¿empezarías HOY?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q23_si_te_mostrara_exactamente",
+          "options": [
+            {
+              "value": "a_si_estoy_lista_para",
+              "label": "👍 ¡SÍ! ¡Estoy lista para empezar AHORA!"
+            },
+            {
+              "value": "b_si_empezaria_hoy_mismo",
+              "label": "👸 Sí, empezaría hoy mismo"
+            },
+            {
+              "value": "c_si_pero_quiero_ver",
+              "label": "👀 Sí, pero quiero ver cómo funciona primero"
+            },
+            {
+              "value": "d_quizas_necesito_pensarlo",
+              "label": "🧠 Quizás, necesito pensarlo"
+            },
+            {
+              "value": "e_no_prefiero_quedarme_como",
+              "label": "🤔 No, prefiero quedarme como estoy"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "q24_te_comprometes_a_seguir",
+      "order": 26,
+      "analyticsKey": "q24_te_comprometes_a_seguir",
+      "progress": 0.85,
+      "components": [
+        {
+          "type": "heading",
+          "text": "¿Te COMPROMETES a seguir exactamente lo que te voy a mostrar para tener el cuerpo que siempre quisiste?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "q24_te_comprometes_a_seguir",
+          "options": [
+            {
+              "value": "a_si_estoy_100_comprometida",
+              "label": "✅ ¡SÍ! ¡Estoy 100% comprometida!"
+            },
+            {
+              "value": "b_si_voy_a_seguirlo",
+              "label": "🙋‍♀️ Sí, voy a seguirlo al pie de la letra"
+            },
+            {
+              "value": "c_si_voy_a_hacer",
+              "label": "💪 Sí, voy a hacer lo mejor que pueda"
+            },
+            {
+              "value": "d_quizas_depende_de_que",
+              "label": "🤷‍♀️ Quizás, depende de qué es"
+            }
+          ],
+          "autoAdvance": true
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_loading",
+      "order": 27,
+      "analyticsKey": "diagnostic_loading",
+      "progress": 0.97,
+      "components": [
+        {
+          "type": "loading_screen",
+          "text": "Analizamos tus respuestas e identificamos EXACTAMENTE lo que te impide tener piernas torneadas y glúteos levantados.",
+          "subtext": "🔍 3 patrones detectados\n👎 1 mentira revelada\n✅ 1 solución personalizada",
+          "durationMs": 3400,
+          "variant": "bar"
+        }
+      ]
+    },
+    {
+      "id": "pitch_vsl",
+      "order": 28,
+      "analyticsKey": "pitch_vsl",
+      "progress": 1,
+      "components": [
+        {
+          "type": "callout",
+          "title": "✨ Diagnóstico completo ✨",
+          "variant": "accent",
+          "alignment": "center"
+        },
+        {
+          "type": "heading",
+          "text": "¡Tu plan personalizado está listo!",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Con base en tus respuestas, identificamos que puedes conquistar piernas torneadas y glúteos levantados en 4 semanas — incluso con rodillas sensibles."
+        },
+        {
+          "type": "heading",
+          "text": "🎥 ¡Mira el video abajo para desbloquear el Truco del Glúteo ahora!",
+          "level": 2
+        },
+        {
+          "type": "video_script",
+          "scriptSrc": "https://scripts.converteai.net/YOUR_ACCOUNT_ID/players/YOUR_PLAYER_ID/v4/player.js",
+          "playerTag": "vturb-smartplayer",
+          "playerAttributes": {
+            "id": "vid-YOUR_PLAYER_ID",
+            "style": "display:block;margin:0 auto;width:100%;"
+          },
+          "aspectRatio": "9 / 16",
+          "pitchSync": {
+            "delaySeconds": 114
+          }
+        },
+        {
+          "type": "callout",
+          "title": "⏳ Estás a 30 segundos de conquistar piernas y glúteos lindos SIN SENTADILLAS",
+          "variant": "warning",
+          "alignment": "center",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "stat_bars",
+          "items": [
+            {
+              "badge": "HOY",
+              "badgeVariant": "muted",
+              "percent": 25,
+              "color": "accent",
+              "caption": "Dolor en las rodillas"
+            },
+            {
+              "badge": "EN 4 SEMANAS",
+              "badgeVariant": "accent",
+              "percent": 90,
+              "color": "success",
+              "caption": "Piernas firmes y definidas"
+            }
+          ],
+          "barHeight": "8rem",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "testimonial_carousel",
+          "items": [
+            {
+              "rating": 5,
+              "headline": "Valentina Torres ⭐ ★★★★★",
+              "handle": "Valentina Torres",
+              "body": "¡Por fin encontré algo que no destruye mis rodillas!"
+            },
+            {
+              "rating": 5,
+              "headline": "Ana Lucía M. ⭐ ★★★★★",
+              "handle": "Ana Lucía M.",
+              "body": "Sentía mucho dolor en las rodillas y había dejado de entrenar piernas. Esta guía salvó mi autoestima, ¡pero me trajo un problema: mis glúteos ya no caben en mis jeans anteriores! 😅"
+            },
+            {
+              "rating": 5,
+              "headline": "Carolina Restrepo ⭐ ★★★★★",
+              "handle": "Carolina Restrepo",
+              "body": "Mi entrenador decía que sin pesas de gimnasio no había resultados. ¡Estaba equivocado! La guía quema muchísimo, las piernas se ponen durita y mis glúteos están felices jajaja Valió cada centavo."
+            }
+          ],
+          "autoPlay": true,
+          "intervalMs": 6000,
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "pricing_card",
+          "badge": "GARANTÍA 7 DÍAS",
+          "badgeColor": "#7C3AED",
+          "planName": "Guía Glúteos Sin Sentadillas",
+          "originalPrice": "$97",
+          "price": "US$ 12,90",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "button",
+          "label": "Quiero Transformar mis Piernas y Glúteos en 4 Semanas →",
+          "href": "https://example.com/checkout",
+          "target": "_blank",
+          "variant": "hero",
+          "color": "#15803D",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "callout",
+          "title": "🛡 Garantía de 7 días",
+          "body": "Tienes 7 días para probar la Guía Glúteos Sin Sentadillas. Si no sientes que tus piernas trabajan de verdad o no te gusta el contenido, te devolvemos el 100% de tu dinero. Sin preguntas.",
+          "variant": "success",
+          "alignment": "center",
+          "hiddenUntilPitch": true
+        },
+        {
+          "type": "faq",
+          "items": [
+            {
+              "question": "¿Funciona aunque no haga sentadillas?",
+              "answer": "¡Sí! El Método activa los músculos de los muslos y glúteos con ejercicios sin impacto que son incluso más eficaces para quienes tienen rodillas sensibles."
+            },
+            {
+              "question": "¿Cuánto tiempo para ver resultados?",
+              "answer": "Resultados visibles de tono muscular pueden notarse ya en las primeras semanas de dedicación al plan de 20 minutos."
+            },
+            {
+              "question": "Tengo condromalacia/dolor en la rodilla, ¿puedo hacerlo?",
+              "answer": "¡Sí! La guía fue diseñada específicamente para eliminar la compresión articular de la sentadilla tradicional, enfocándose en ejercicios seguros."
+            },
+            {
+              "question": "¿Necesito equipamiento?",
+              "answer": "No. El método es 100% adaptable para hacer en casa solo con el peso corporal o elementos domésticos simples."
+            }
+          ],
+          "hiddenUntilPitch": true
+        }
+      ]
+    }
+  ]
+}

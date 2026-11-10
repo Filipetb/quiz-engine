@@ -1,0 +1,60 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Claude Code per-user settings
+.claude/settings.local.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test/coverage
+coverage
+*.lcov
+.nyc_output
+
+# Cache
+.eslintcache
+.tsbuildinfo
+.vite
+
+# OS
+Thumbs.db
+
+# Media de referência pesada — não versionar a gravação.
+Gravação*.mov
+*.mov
+docs/**/*.mov
+docs/**/*.png
+
+# Supabase (config.toml é versionado; temporários não)
+supabase/.branches
+supabase/.temp
+supabase/.env
+.vercel

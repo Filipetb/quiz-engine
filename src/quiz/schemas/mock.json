@@ -1,0 +1,165 @@
+{
+  "quiz": {
+    "id": "mock",
+    "slug": "mock",
+    "name": "Mock Quiz (Etapa 1)",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 47% 11%",
+      "accent": "142 76% 36%",
+      "accentFg": "0 0% 100%",
+      "muted": "210 40% 96%"
+    },
+    "radius": "0.75rem"
+  },
+  "variables": {
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "goal": {
+      "type": "string",
+      "default": null
+    },
+    "height_cm": {
+      "type": "number",
+      "default": null
+    },
+    "weight_current": {
+      "type": "number",
+      "default": null
+    },
+    "bmi": {
+      "type": "number",
+      "compute": "weight_current / ((height_cm / 100) * (height_cm / 100))"
+    }
+  },
+  "steps": [
+    {
+      "id": "step-intro",
+      "order": 0,
+      "analyticsKey": "landing",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Descubra seu plano em 2 minutos"
+        },
+        {
+          "type": "text",
+          "text": "Este é um mock da Etapa 1. Clique em avançar para navegar pelo runtime."
+        },
+        {
+          "type": "button",
+          "label": "Começar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "step-name",
+      "order": 1,
+      "analyticsKey": "name",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como devemos te chamar?"
+        },
+        {
+          "type": "text_input",
+          "variable": "name",
+          "label": "Seu nome",
+          "placeholder": "Digite seu nome",
+          "required": true,
+          "continueLabel": "Continuar"
+        }
+      ]
+    },
+    {
+      "id": "step-goal",
+      "order": 2,
+      "analyticsKey": "goal",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu objetivo?"
+        },
+        {
+          "type": "single_choice",
+          "variable": "goal",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "lose",
+              "label": "Emagrecer"
+            },
+            {
+              "value": "gain",
+              "label": "Ganhar massa"
+            },
+            {
+              "value": "maintain",
+              "label": "Manter o peso"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-measures",
+      "order": 3,
+      "analyticsKey": "measures",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Peso e altura"
+        },
+        {
+          "type": "number_input",
+          "variable": "height_cm",
+          "label": "Altura (cm)",
+          "placeholder": "Ex.: 175",
+          "min": 100,
+          "max": 250
+        },
+        {
+          "type": "number_input",
+          "variable": "weight_current",
+          "label": "Peso atual (kg)",
+          "placeholder": "Ex.: 75",
+          "min": 30,
+          "max": 300,
+          "continueLabel": "Ver resultado"
+        }
+      ]
+    },
+    {
+      "id": "step-result",
+      "order": 4,
+      "analyticsKey": "result",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Seu IMC"
+        },
+        {
+          "type": "bmi_gauge",
+          "variable": "bmi"
+        },
+        {
+          "type": "text",
+          "text": "Componente real de gauge entra na Etapa 3. Por enquanto, o placeholder mostra o valor calculado."
+        },
+        {
+          "type": "button",
+          "label": "Finalizar",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    }
+  ]
+}

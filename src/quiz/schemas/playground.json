@@ -1,0 +1,290 @@
+{
+  "quiz": {
+    "id": "playground",
+    "slug": "playground",
+    "name": "Playground (Etapa 2)",
+    "version": 1
+  },
+  "theme": {
+    "colors": {
+      "bg": "0 0% 100%",
+      "fg": "222 47% 11%",
+      "accent": "142 76% 36%",
+      "accentFg": "0 0% 100%",
+      "muted": "210 40% 96%"
+    },
+    "radius": "0.75rem"
+  },
+  "variables": {
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "goal": {
+      "type": "string",
+      "default": null
+    },
+    "gender": {
+      "type": "string",
+      "default": null
+    },
+    "obstacles": {
+      "type": "string[]",
+      "default": []
+    },
+    "height_cm": {
+      "type": "number",
+      "default": null
+    },
+    "weight_current": {
+      "type": "number",
+      "default": null
+    },
+    "bmi": {
+      "type": "number",
+      "compute": "weight_current / ((height_cm / 100) * (height_cm / 100))"
+    }
+  },
+  "steps": [
+    {
+      "id": "step-welcome",
+      "order": 0,
+      "analyticsKey": "welcome",
+      "components": [
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/hero/640/320",
+          "alt": "Capa do quiz",
+          "aspectRatio": "2 / 1"
+        },
+        {
+          "type": "heading",
+          "text": "Seu plano em 2 minutos",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Este é o playground da Etapa 2 — exercita todos os componentes visuais básicos. Respostas ficam no store e podem ser inspecionadas em /admin."
+        },
+        {
+          "type": "button",
+          "label": "Começar agora",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "step-name",
+      "order": 1,
+      "analyticsKey": "name",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Como devemos te chamar?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Seu nome fica salvo só nesta sessão — nenhum dado é enviado ainda."
+        },
+        {
+          "type": "text_input",
+          "variable": "name",
+          "label": "Seu nome",
+          "placeholder": "Digite seu nome",
+          "required": true,
+          "continueLabel": "Continuar"
+        }
+      ]
+    },
+    {
+      "id": "step-goal",
+      "order": 2,
+      "analyticsKey": "goal",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu objetivo?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "goal",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "lose",
+              "label": "Emagrecer"
+            },
+            {
+              "value": "gain",
+              "label": "Ganhar massa"
+            },
+            {
+              "value": "maintain",
+              "label": "Manter o peso"
+            },
+            {
+              "value": "tone",
+              "label": "Definir o corpo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-gender",
+      "order": 3,
+      "analyticsKey": "gender",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Qual é o seu gênero?",
+          "level": 1
+        },
+        {
+          "type": "single_choice",
+          "variable": "gender",
+          "autoAdvance": true,
+          "options": [
+            {
+              "value": "female",
+              "label": "Feminino",
+              "imageSrc": "https://picsum.photos/seed/gender-female/240/240"
+            },
+            {
+              "value": "male",
+              "label": "Masculino",
+              "imageSrc": "https://picsum.photos/seed/gender-male/240/240"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-obstacles",
+      "order": 4,
+      "analyticsKey": "obstacles",
+      "components": [
+        {
+          "type": "heading",
+          "text": "O que te impede de evoluir?",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Selecione um ou mais. Você pode trocar a qualquer momento."
+        },
+        {
+          "type": "multi_choice",
+          "variable": "obstacles",
+          "minSelected": 1,
+          "maxSelected": 3,
+          "continueLabel": "Continuar",
+          "options": [
+            {
+              "value": "time",
+              "label": "Falta de tempo"
+            },
+            {
+              "value": "motivation",
+              "label": "Falta de motivação"
+            },
+            {
+              "value": "knowledge",
+              "label": "Não sei por onde começar"
+            },
+            {
+              "value": "diet",
+              "label": "Dificuldade com a alimentação"
+            },
+            {
+              "value": "routine",
+              "label": "Rotina desregulada"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-measures",
+      "order": 5,
+      "analyticsKey": "measures",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Peso e altura",
+          "level": 1
+        },
+        {
+          "type": "number_input",
+          "variable": "height_cm",
+          "label": "Altura (cm)",
+          "placeholder": "Ex.: 175",
+          "min": 100,
+          "max": 250,
+          "required": true
+        },
+        {
+          "type": "number_input",
+          "variable": "weight_current",
+          "label": "Peso atual (kg)",
+          "placeholder": "Ex.: 75",
+          "min": 30,
+          "max": 300,
+          "required": true,
+          "continueLabel": "Ver resultado"
+        }
+      ]
+    },
+    {
+      "id": "step-result",
+      "order": 6,
+      "analyticsKey": "result",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Seu IMC",
+          "level": 1
+        },
+        {
+          "type": "bmi_gauge",
+          "variable": "bmi"
+        },
+        {
+          "type": "text",
+          "text": "Gauge real entra na Etapa 3. Por enquanto, o placeholder mostra o valor calculado a partir das respostas."
+        },
+        {
+          "type": "button",
+          "label": "Ver plano final",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "id": "step-complete",
+      "order": 7,
+      "analyticsKey": "complete",
+      "components": [
+        {
+          "type": "heading",
+          "text": "Tudo pronto!",
+          "level": 1
+        },
+        {
+          "type": "text",
+          "text": "Seu plano foi calculado. Clique abaixo para seguir para o checkout — por enquanto é só um botão de teste, integração real entra na Etapa 10."
+        },
+        {
+          "type": "button",
+          "label": "Quero meu plano",
+          "action": "next",
+          "variant": "primary"
+        }
+      ]
+    }
+  ]
+}

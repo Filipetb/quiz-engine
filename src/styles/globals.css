@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn/ui — usados no dashboard */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+
+    /* Quiz runtime — sobrescritos pelo theme do schema no <QuizThemeProvider>. */
+    --quiz-bg: 0 0% 100%;
+    --quiz-fg: 222 47% 11%;
+    --quiz-accent: 142 76% 36%;
+    --quiz-accent-fg: 0 0% 100%;
+    --quiz-muted: 210 40% 96%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  /* CTA primário do runtime do quiz — usado em todos os componentes de avanço
+     (Button, SingleChoice, MultiChoice, inputs, pickers). */
+  .quiz-btn-primary {
+    @apply inline-flex h-14 w-full items-center justify-center rounded-md bg-quiz-accent px-6 text-base font-semibold text-quiz-accent-fg transition-colors hover:bg-quiz-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-quiz-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  /* Variante "hero" do CTA: fixo no bottom da viewport, com shadow, pulse
+     animado num pseudo-element atrás. Usado no step de welcome. */
+  .quiz-btn-hero {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    margin-inline: auto;
+    max-width: calc(100vw - 2rem);
+    z-index: 50;
+    isolation: isolate;
+    box-shadow:
+      0 10px 25px -5px hsl(var(--quiz-accent) / 0.45),
+      0 8px 10px -6px hsl(var(--quiz-accent) / 0.35);
+  }
+
+  .quiz-btn-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--btn-bg, hsl(var(--quiz-accent)));
+    animation: quiz-btn-pulse 1.6s ease-out infinite;
+    pointer-events: none;
+  }
+
+  /* Variante "raised": botão estático em alto-relevo (sombra inferior sólida
+     + shadow de profundidade). `:active` afunda 3px para devolver o feedback
+     tátil. Usada em CTAs não-fixed (ex.: cópias de CTA no meio do step). */
+  .quiz-btn-raised {
+    box-shadow:
+      0 4px 0 0 rgba(0, 0, 0, 0.18),
+      0 8px 16px -4px rgba(0, 0, 0, 0.22);
+    transition: transform 120ms ease-out, box-shadow 120ms ease-out, filter 120ms;
+  }
+  .quiz-btn-raised:hover {
+    filter: brightness(1.05);
+  }
+  .quiz-btn-raised:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 1px 0 0 rgba(0, 0, 0, 0.18),
+      0 3px 6px -2px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Espaçador renderizado inline junto com o botão hero pra reservar altura no
+     fluxo e impedir que o conteúdo fique oculto sob o botão fixed. */
+  .quiz-btn-hero-spacer {
+    height: calc(3.5rem + 2rem);
+  }
+
+  /* Componentes marcados com `hiddenUntilPitch: true` ficam invisíveis até
+     que o `video_script` chame `displayHiddenElements` da Vturb no `player:ready`.
+     A Vturb remove/sobrescreve o display quando o timestamp do pitch é atingido. */
+  .pq-pitch-hidden {
+    display: none;
+  }
+}
+
+@keyframes quiz-loading-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes quiz-btn-pulse {
+  0% {
+    opacity: 1;
+    transform: scaleY(0.95);
+  }
+  50% {
+    opacity: 0;
+    transform: scaleY(1.3) scaleX(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+}
