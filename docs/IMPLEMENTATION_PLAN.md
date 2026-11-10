@@ -2,12 +2,37 @@
 
 > Plano aprovado em **2026-04-14**. Referência: [`PRD.md`](../PRD.md).
 > Ao executar cada etapa, paramos no final pra validar antes de seguir.
+>
+> **Status: v1 concluída — Etapas 0 a 10 implementadas e em produção.**
+
+| Etapa | Entrega | Status |
+| --- | --- | --- |
+| 0 | Fundação (Vite, Tailwind, shadcn, Supabase local) | ✅ |
+| 1 | Engine de schema + runtime | ✅ |
+| 2 | Componentes visuais básicos | ✅ |
+| 3 | Componentes avançados + `VideoScriptEmbed` | ✅ |
+| 4 | Sessão persistente de 24h + `ResumeToast` | ✅ |
+| 5 | Clone do quiz de referência + componentes de vendas | ✅ |
+| 6 | Schema Supabase + edge function `track` | ✅ |
+| 7 | Tracking no cliente + espelho GTM | ✅ |
+| 8 | Read model (materialized views) + edge function `metrics` | ✅ |
+| 9 | Dashboard de CRO + seletor multi-quiz | ✅ |
+| 10 | Deploy (Supabase Cloud + Vercel) + QA | ✅ |
+
+### O que mudou em relação ao plano original
+
+- **Componentes**: além dos previstos, entraram `callout`, `faq`, `pricing_card`, `stat_bars` e `testimonial_carousel` (22 tipos no registry; pickers compartilham a base `NumericPicker`). Catálogo completo em [`AGENT_QUIZ_AUTHORING.md`](AGENT_QUIZ_AUTHORING.md).
+- **Múltiplos quizzes**: o runtime serve qualquer schema registrado em `QuizPage.tsx` (`/q/:slug`), e o dashboard tem seletor de quiz. Exemplos em `src/quiz/schemas/`.
+- **Guia para agentes**: [`AGENT_QUIZ_AUTHORING.md`](AGENT_QUIZ_AUTHORING.md) permite que Claude/Codex gerem schemas novos sem ler o código.
+- **Migrations**: `20260415_init`, `20260416_rls`, `20260417_aggregates`, `20260418_include_suspect_in_aggregates` (tráfego `suspect` entra nos agregados) e `20260419_fix_views_use_session_quality` (qualidade de tráfego lida da sessão, não do evento).
+- **Login do dashboard**: email + senha via Supabase Auth (não magic link). Usuários são criados no painel do Supabase.
+- **Checkout e GTM**: URL de checkout vive no `href` do botão de cada schema; GTM via `VITE_GTM_ID`.
 
 ---
 
 ## Context
 
-O projeto está em estado **scaffold puro**: só existe `PRD.md`, `supabase/config.toml`, e a gravação `gravação de tela do quiz de referência (.mov)` (28 MB). Não há `package.json`, `src/`, migrations, nem commit inicial.
+*(Contexto no momento da aprovação.)* O projeto estava em estado **scaffold puro**: só existia `PRD.md`, `supabase/config.toml`, e a gravação `gravação de tela do quiz de referência (.mov)` (28 MB). Não havia `package.json`, `src/`, migrations, nem commit inicial.
 
 **Objetivo**: construir em etapas incrementais a v1 do QuizEngine conforme PRD — runtime de quiz por schema + pipeline de analytics próprio + dashboard interno de CRO — começando pelo clone fiel do quiz de referência (treino em casa).
 
@@ -91,7 +116,7 @@ QuizEngine/
 
 ## Etapas
 
-### Etapa 0 — Fundação (setup do projeto)
+### Etapa 0 — Fundação (setup do projeto) ✅
 
 **Objetivo**: repositório pronto pra codar, com todas as decisões técnicas materializadas.
 
@@ -117,7 +142,7 @@ QuizEngine/
 
 ---
 
-### Etapa 1 — Engine de Schema + Runtime
+### Etapa 1 — Engine de Schema + Runtime ✅
 
 **Objetivo**: renderizar qualquer quiz a partir de schema JSON, com navegação funcional (sem componentes visuais reais ainda).
 
@@ -149,7 +174,7 @@ QuizEngine/
 
 ---
 
-### Etapa 2 — Componentes visuais (leva básica)
+### Etapa 2 — Componentes visuais (leva básica) ✅
 
 **Objetivo**: ter os componentes "simples" do quiz de referência funcionando com polish visual via Tailwind.
 
@@ -176,7 +201,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 3 — Componentes avançados
+### Etapa 3 — Componentes avançados ✅
 
 **Objetivo**: cobrir os componentes específicos do quiz de referência que exigem mais trabalho.
 
@@ -202,7 +227,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 4 — Sessão & Persistência
+### Etapa 4 — Sessão & Persistência ✅
 
 **Objetivo**: atender §15 e §8.5 do PRD — retomada automática por 24h.
 
@@ -220,7 +245,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 5 — Clone fiel do quiz de referência
+### Etapa 5 — Clone fiel do quiz de referência ✅
 
 **Objetivo**: materializar o quiz de referência (treino em casa) real em cima da engine.
 
@@ -246,7 +271,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 6 — Backend Supabase (schema + ingestão)
+### Etapa 6 — Backend Supabase (schema + ingestão) ✅
 
 **Objetivo**: esquema de dados + edge function de ingestão conforme §13 e §16 do PRD.
 
@@ -280,7 +305,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 7 — Tracking no cliente + GTM
+### Etapa 7 — Tracking no cliente + GTM ✅
 
 **Objetivo**: disparar os 7 eventos obrigatórios do §10 do PRD com resiliência (§11.2).
 
@@ -314,7 +339,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 8 — Read model + agregados
+### Etapa 8 — Read model + agregados ✅
 
 **Objetivo**: queries prontas pra alimentar o dashboard (§9.1, §9.2, §9.3).
 
@@ -341,7 +366,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 9 — Dashboard interno
+### Etapa 9 — Dashboard interno ✅
 
 **Objetivo**: UI pro time de CRO conforme §18 do PRD.
 
@@ -366,7 +391,7 @@ type ComponentProps = {
 
 ---
 
-### Etapa 10 — Deploy + QA final
+### Etapa 10 — Deploy + QA final ✅
 
 **Objetivo**: entregar a v1 em produção atendendo os critérios do §20 do PRD.
 
@@ -397,25 +422,23 @@ type ComponentProps = {
 
 ---
 
-## Riscos abertos / coisas pra confirmar durante execução
+## Riscos abertos → decisões tomadas
 
-1. **Assets do quiz de referência**: só temos a gravação. Fidelidade pixel-perfect pode ser limitada. Aceitável aproximar ou tem acesso aos assets originais (Figma, PSDs, CDN URLs)?
-2. **GTM container ID**: qual usar? Placeholder até a Etapa 7.
-3. **URL do checkout final**: confirmar URL exata.
-4. **Subdomínio `quiz.example.com`**: DNS em que provedor? Quem cria o CNAME?
-5. **Login do dashboard**: magic link por email, allowlist de emails?
-6. **Política de bots**: começamos com lista estática (~10 UAs). Evolução futura fora da v1.
-
-Pergunto cada um quando chegarmos na etapa onde a resposta importa.
+1. **Assets do quiz de referência**: aproximados a partir da gravação/prints e servidos de `public/images/`.
+2. **GTM container ID**: configurável via `VITE_GTM_ID` (vazio desativa o snippet).
+3. **URL do checkout final**: definida por schema, no `href` do botão final.
+4. **Subdomínio**: CNAME apontando para a Vercel, configurado por quem faz o deploy.
+5. **Login do dashboard**: email + senha (Supabase Auth); sem cadastro público.
+6. **Política de bots**: lista estática de UAs classifica `bot`/`suspect`/`human`; evolução fica para depois da v1.
 
 ---
 
-## Timeline (referência grosseira)
+## Timeline (realizada)
 
-- Etapa 0: ~1 ciclo (setup)
-- Etapas 1–4: runtime + componentes + sessão (bloco mais intenso)
-- Etapa 5: clone (depende de acesso a assets)
-- Etapas 6–9: backend + tracking + dashboard
-- Etapa 10: deploy + QA
+- 2026-04-14 — Etapas 0–4: fundação, engine, componentes e sessão
+- 2026-04-15 — Etapa 5: clone do quiz de referência
+- 2026-04-16 — Etapas 6–9: backend, tracking, métricas e dashboard
+- 2026-04-17 — Etapa 10: deploy, ajustes de dashboard e QA
+- Depois da v1: novos quizzes de exemplo (EN, glúteos, sono do bebê) e ajustes de UI
 
 Ordem sequencial por design — cada etapa depende das anteriores. **Paramos ao fim de cada etapa** pra validar e decidir se ajusta antes de seguir.
